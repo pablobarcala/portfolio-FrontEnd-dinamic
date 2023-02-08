@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { MaterialModule } from './modules/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -36,7 +37,8 @@ import { TecnologiaItemComponent } from './components/tecnologia-item/tecnologia
     FontAwesomeModule,
     HttpClientModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

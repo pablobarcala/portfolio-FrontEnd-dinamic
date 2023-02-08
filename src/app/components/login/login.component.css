@@ -1,0 +1,37 @@
+.container-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 0;
+}
+
+.card-login {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header {
+    margin: 2% 0;
+}
+
+.card-title {
+    font-size: 2rem;
+}
+
+.card-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    padding: 3% 0;
+}
+
+.card-form__input {
+    width: 100%;
+}
+
+.card-form__button {
+    width: 40%;
+}

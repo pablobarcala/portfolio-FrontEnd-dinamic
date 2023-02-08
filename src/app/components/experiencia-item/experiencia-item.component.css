@@ -1,6 +1,6 @@
 .card {
-    padding: 0 1.5%;
-    margin-bottom: 1%;
+    padding: 0 0.7rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
@@ -13,7 +13,7 @@
 .avatar {
     background-image: url('../../../assets/images/exp.jpg');
     background-size: cover;
-    margin: 0 1% 0 0;
+    margin: 0 1rem 0 0;
 }
 
 .card__title {
@@ -22,8 +22,8 @@
 
 .card__content__title {
     font-size: 1rem;
-    font-weight: 500;
-    margin-top: 1.3%;
+    font-weight: 600;
+    margin-top: 1.3rem;
 }
 
 .card__content__description {

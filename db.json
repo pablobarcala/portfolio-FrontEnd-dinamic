@@ -1,4 +1,11 @@
 {
+    "user": [
+        {
+            "id": 0,
+            "username": "pabloadmin",
+            "password": "adminportfolio"
+        }
+    ],
     "persona": [
         {
             "id": 0,
