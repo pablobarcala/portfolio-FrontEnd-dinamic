@@ -9,4 +9,5 @@ import { Tecnologia } from 'src/app/interfaces/Tecnologia';
 })
 export class TecnologiaItemComponent {
   @Input() tecnologia: Tecnologia = TECNOLOGIA[0]
+
 }

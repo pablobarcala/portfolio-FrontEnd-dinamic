@@ -1,0 +1,22 @@
+.card-skill {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+.card-header {
+    width: 100%;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(241, 226, 255);
+}
+
+.card-title {
+    font-size: 1.6rem;
+}
+
+.card-content {
+    padding: 5%;
+}
