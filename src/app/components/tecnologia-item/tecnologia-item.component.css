@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     background-color: rgb(241, 226, 255);
+    border-radius: 4px 4px 0 0;
 }
 
 .card-title {
