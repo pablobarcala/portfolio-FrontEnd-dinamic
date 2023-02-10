@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 import { TecnologiaItemComponent } from './components/tecnologia-item/tecnologia-item.component';
+import { AboutEditComponent } from './components/about-edit/about-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TecnologiaItemComponent } from './components/tecnologia-item/tecnologia
     LoginComponent,
     AboutComponent,
     TecnologiasComponent,
-    TecnologiaItemComponent
+    TecnologiaItemComponent,
+    AboutEditComponent
   ],
   imports: [
     BrowserModule,

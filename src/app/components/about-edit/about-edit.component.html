@@ -1,0 +1,77 @@
+<div class="dialog-container">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <mat-accordion>
+            <!-- ----------------- CARD NOMBRE --------------------- -->
+            <mat-expansion-panel class="card-panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title 
+                        class="card-title"
+                    >Nombre:<p class="card-name">{{form.value.fullname}}</p>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="outline" color="accent" class="card-field">
+                    <mat-label>Nombre</mat-label>
+                    <input 
+                        matInput 
+                        placeholder="Ingrese su nombre" 
+                        type="text"
+                        formControlName="fullname"
+                    >
+                </mat-form-field>
+            </mat-expansion-panel>
+        
+            <!-- ------------------ CARD TITULO -------------------- -->
+            <mat-expansion-panel class="card-panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title 
+                        class="card-title"
+                    >Título:<p class="card-name">{{form.value.titulo}}</p>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="outline" color="accent" class="card-field">
+                    <mat-label>Título</mat-label>
+                    <input 
+                        matInput 
+                        placeholder="Ingrese su título" 
+                        type="text"
+                        formControlName="titulo"
+                    >
+                </mat-form-field>
+            </mat-expansion-panel>
+    
+            <!-- ------------------ CARD ACERCA DE ----------------- -->
+            <mat-expansion-panel class="card-panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="card-title">Acerca de:</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="outline" color="accent" class="card-textarea">
+                    <mat-label>Acerca de:</mat-label>
+                    <textarea 
+                        matInput 
+                        placeholder="Ingrese su información" 
+                        type="text"
+                        formControlName="description" 
+                        class="textarea-input"   
+                    ></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+            
+            <!-- ------------------ CARD BUTTONS ------------------- -->
+            <div class="container-buttons">
+                <button 
+                    mat-raised-button 
+                    color="accent" 
+                    type="submit"
+                    class="dialog-button"
+                    [mat-dialog-close]="form"
+                >EDITAR</button>
+                <button 
+                    mat-raised-button 
+                    type="button" 
+                    class="dialog-button"
+                    (click)="onNoClick()"
+                >CERRAR</button>
+            </div>
+        </mat-accordion>
+    </form>
+</div>

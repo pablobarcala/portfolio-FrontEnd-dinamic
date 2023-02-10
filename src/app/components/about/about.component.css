@@ -22,6 +22,7 @@
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
+    margin-bottom: 0.6rem;
 }
 
 .card-profile {
@@ -46,4 +47,9 @@
 
 .panel-text {
     font-size: 0.8rem;
+}
+
+
+.btn-edit {
+    font-size: 0.1rem;
 }

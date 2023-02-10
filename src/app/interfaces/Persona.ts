@@ -1,5 +1,5 @@
 export interface Persona {
-    id: number;
+    id?: number;
     fullname: string;
     titulo: string;
     description: string;

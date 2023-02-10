@@ -5,13 +5,26 @@
             <mat-card-title class="card-title">{{persona.fullname}}</mat-card-title>
             <mat-card-subtitle class="card-subtitle">{{persona.titulo}}</mat-card-subtitle>
         </mat-card-header>
+        <button 
+            mat-flat-button 
+            color="accent" 
+            (click)="onEdit(persona)"
+            class="btn-edit"
+            *ngIf="authService.logIn"
+        >
+            <i class="fa-regular fa-edit"></i>
+            Editar información personal
+        </button>
     </mat-card>
     <mat-accordion>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
-                <mat-panel-title class="panel-title">Acerca de:</mat-panel-title>
+                <mat-panel-title class="panel-title">{{title}}</mat-panel-title>
             </mat-expansion-panel-header>
             <p class="panel-text">{{persona.description}}</p>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
+
+
+<!--  -->

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Persona } from 'src/app/interfaces/Persona';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
