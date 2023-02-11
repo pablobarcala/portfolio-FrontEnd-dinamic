@@ -1,0 +1,72 @@
+/* ---------------------- CONTAINER DE LA LISTA -------------------- */
+
+.container-list {
+    width: 60%;
+    padding: 2rem 1rem;
+    margin: 2rem auto; 
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+/* ---------------------- HEADER DE LA LISTA ----------------------- */
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.container-header > h2 {
+    font-size: 1.4rem;
+}
+
+.container-header-buttons > button{
+    margin-left: 0.6rem;
+}
+
+/* ---------------------- ESTILOS DE CADA ITEMS -------------------- */
+
+.card-item {
+    margin-bottom: 0.6rem;
+}
+
+/* ------ ENCABEZADO ------ */
+
+.card-header {
+    padding: 0.5rem;
+}
+
+/* ------ CONTENT ------ */
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-description {
+    padding: 0.5rem;
+}
+
+.card-description > p {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+/* ------ BOTONES ------ */
+
+.card-buttons {
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3rem;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.fa-times.button {
+    color: rgb(168, 3, 3);
+}
