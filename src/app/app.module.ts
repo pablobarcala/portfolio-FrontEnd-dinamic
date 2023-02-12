@@ -10,16 +10,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EducationsComponent } from './components/compsEducation/educations/educations.component';
 import { EducationItemComponent } from './components/compsEducation/education-item/education-item.component';
-import { ExperienciasComponent } from './components/experiencias/experiencias.component';
-import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
+import { ExperienciasComponent } from './components/compsExperiencia/experiencias/experiencias.component';
+import { ExperienciaItemComponent } from './components/compsExperiencia/experiencia-item/experiencia-item.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
-import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
-import { TecnologiaItemComponent } from './components/tecnologia-item/tecnologia-item.component';
+import { TecnologiasComponent } from './components/compsTecnologia/tecnologias/tecnologias.component';
+import { TecnologiaItemComponent } from './components/compsTecnologia/tecnologia-item/tecnologia-item.component';
 import { AboutEditComponent } from './components/about-edit/about-edit.component';
 import { EducationControlComponent } from './components/compsEducation/education-control/education-control.component';
 import { EducationEditComponent } from './components/compsEducation/education-edit/education-edit.component';
+import { ExperienciaControlComponent } from './components/compsExperiencia/experiencia-control/experiencia-control.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EducationEditComponent } from './components/compsEducation/education-ed
     TecnologiaItemComponent,
     AboutEditComponent,
     EducationControlComponent,
-    EducationEditComponent
+    EducationEditComponent,
+    ExperienciaControlComponent
   ],
   imports: [
     BrowserModule,
