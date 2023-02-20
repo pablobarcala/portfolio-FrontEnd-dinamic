@@ -6,18 +6,20 @@
             <button mat-flat-button color="warn" routerLink="">Volver</button>
         </div>
     </div>
-    <mat-card *ngFor="let education of educations" class="card-item">
+    <mat-card *ngFor="let project of projects" class="card-item">
         <mat-card-header class="card-header">
-            <mat-card-title>{{education.name}}</mat-card-title>
+            <mat-card-title>{{project.name}}</mat-card-title>
         </mat-card-header>
         <div class="card-container">
             <div class="card-description">
-                <p>{{education.description}}</p>
+                <p>{{project.description}}</p>
             </div>
             <div class="card-buttons">
                 <i class="fa-regular fa-edit button"></i>
-                <i class="fa-solid fa-times button" (click)="onDelete(education)"></i>
+                <i class="fa-solid fa-times button" (click)="onDelete(project)"></i>
             </div>
         </div>
     </mat-card>
 </mat-card>
+
+

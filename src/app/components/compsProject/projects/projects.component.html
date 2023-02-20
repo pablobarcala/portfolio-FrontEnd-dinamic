@@ -1,0 +1,21 @@
+<div class="component-header">
+    <div class="container-title">
+        <h2>PROYECTOS:</h2>
+    </div>
+    <button 
+        mat-flat-button 
+        color="accent"
+        *ngIf="authService.logIn"
+        routerLink="projects"
+    >
+        <i class="fa-regular fa-edit"></i>
+        Editar proyectos
+    </button>
+</div>
+<div class="container-exp">
+    <app-project-item
+        *ngFor="let project of projects"
+        [project]="project"
+    ></app-project-item>
+</div>
+

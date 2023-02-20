@@ -21,6 +21,10 @@ import { AboutEditComponent } from './components/about-edit/about-edit.component
 import { EducationControlComponent } from './components/compsEducation/education-control/education-control.component';
 import { EducationEditComponent } from './components/compsEducation/education-edit/education-edit.component';
 import { ExperienciaControlComponent } from './components/compsExperiencia/experiencia-control/experiencia-control.component';
+import { DeleteConfComponent } from './components/delete-conf/delete-conf.component';
+import { ProjectsComponent } from './components/compsProject/projects/projects.component';
+import { ProjectItemComponent } from './components/compsProject/project-item/project-item.component';
+import { ProjectControlComponent } from './components/compsProject/project-control/project-control.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { ExperienciaControlComponent } from './components/compsExperiencia/exper
     AboutEditComponent,
     EducationControlComponent,
     EducationEditComponent,
-    ExperienciaControlComponent
+    ExperienciaControlComponent,
+    DeleteConfComponent,
+    ProjectsComponent,
+    ProjectItemComponent,
+    ProjectControlComponent
   ],
   imports: [
     BrowserModule,
