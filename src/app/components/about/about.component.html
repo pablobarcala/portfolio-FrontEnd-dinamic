@@ -1,8 +1,8 @@
 <div *ngFor="let persona of personas" class="container-about">
     <mat-card class="card-about">
         <mat-card-header class="card-header">
-            <img src="assets/images/profile.jpeg" class="card-profile" alt="Imagen perfil">
-            <mat-card-title class="card-title">{{persona.fullname}}</mat-card-title>
+            <img [src]="'assets/images/' + persona.imagen" class="card-profile" alt="Imagen perfil">
+            <mat-card-title class="card-title">{{persona.nombre}}</mat-card-title>
             <mat-card-subtitle class="card-subtitle">{{persona.titulo}}</mat-card-subtitle>
         </mat-card-header>
         <button 
@@ -10,21 +10,18 @@
             color="accent" 
             (click)="onEdit(persona)"
             class="btn-edit"
-            *ngIf="authService.logIn"
+            
         >
             <i class="fa-regular fa-edit"></i>
             Editar información personal
         </button>
     </mat-card>
-    <mat-accordion>
+    <mat-accordion class="full-width">
         <mat-expansion-panel>
             <mat-expansion-panel-header>
                 <mat-panel-title class="panel-title">{{title}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <p class="panel-text">{{persona.description}}</p>
+            <p class="panel-text">{{persona.descripcion}}</p>
         </mat-expansion-panel>
     </mat-accordion>
 </div>
-
-
-<!--  -->

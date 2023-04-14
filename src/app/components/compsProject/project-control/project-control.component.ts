@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Project } from 'src/app/interfaces/Project';
+import { Proyecto } from 'src/app/interfaces/Proyecto';
 import { ProjectService } from 'src/app/services/project.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
 
@@ -10,7 +10,7 @@ import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
   styleUrls: ['./project-control.component.css']
 })
 export class ProjectControlComponent implements OnInit{
-  projects: Project[] = [];
+  projects: Proyecto[] = [];
 
   constructor(private projectService: ProjectService, private dialog: MatDialog) {}
 
@@ -18,10 +18,10 @@ export class ProjectControlComponent implements OnInit{
     this.projectService.getProject().subscribe(data => this.projects = data);
   }
 
-  onDelete(project: Project): void {
+  onDelete(project: Proyecto): void {
     const dialogRef = this.dialog.open(DeleteConfComponent, {
       data: {
-        name: project.name
+        name: project.nombreProyecto
       }
     })
 

@@ -5,7 +5,7 @@
     <button 
         mat-flat-button 
         color="accent"
-        *ngIf="authService.logIn"
+        
         routerLink="education"
     >
         <i class="fa-regular fa-edit"></i>
@@ -14,7 +14,9 @@
 </div>
 <div class="container-edu">
     <app-education-item
-        *ngFor="let education of educations"
-        [education]="education"
+        *ngFor="let educacion of educaciones"
+        [educacion]="educacion"
     ></app-education-item>
 </div>
+
+<!-- *ngIf="authService.logIn" -->

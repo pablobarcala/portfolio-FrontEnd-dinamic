@@ -13,16 +13,16 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  apiUrl: string = 'http://localhost:5000/experiencia'
+  apiUrl: string = 'http://localhost:8080/api/experiencia'
 
   constructor(private http: HttpClient) {}
 
   getExperiencia(): Observable<Experiencia[]> {
-    return this.http.get<Experiencia[]>(this.apiUrl)
+    return this.http.get<Experiencia[]>(this.apiUrl + '/lista/1')
   }
 
   deleteExperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    const url = `${this.apiUrl}/${experiencia.id}`;
+    const url = `${this.apiUrl}/delete/${experiencia.id}`;
     return this.http.delete<Experiencia>(url, httpOptions)
   }
 }

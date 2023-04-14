@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Education } from 'src/app/interfaces/Education';
+import { Educacion } from 'src/app/interfaces/Educacion';
 import { EducationService } from 'src/app/services/education.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
 
@@ -10,7 +10,7 @@ import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
   styleUrls: ['./education-control.component.css']
 })
 export class EducationControlComponent implements OnInit {
-  educations: Education[] = []
+  educations: Educacion[] = []
 
   constructor(private educationService: EducationService, private dialog: MatDialog){}
 
@@ -18,12 +18,12 @@ export class EducationControlComponent implements OnInit {
     this.educationService.getEducation().subscribe(data => this.educations = data);
   }
 
-  onDelete(education: Education) {
+  onDelete(education: Educacion) {
     const dialogRef = this.dialog.open(DeleteConfComponent, {
       data: {
         title: 'Education',
-        name: education.name,
-        description: education.description
+        name: education.titulo,
+        description: education.descripcion
       }
     })
 

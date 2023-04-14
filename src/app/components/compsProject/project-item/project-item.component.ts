@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { PROJECTS } from 'src/app/interfaces/mock-projects';
-import { Project } from 'src/app/interfaces/Project';
+import { PROYECTOS } from 'src/app/interfaces/mock-proyectos';
+import { Proyecto } from 'src/app/interfaces/Proyecto';
 
 @Component({
   selector: 'app-project-item',
@@ -8,5 +8,5 @@ import { Project } from 'src/app/interfaces/Project';
   styleUrls: ['./project-item.component.css']
 })
 export class ProjectItemComponent {
-  @Input() project: Project = PROJECTS[0];
+  @Input() proyecto: Proyecto = PROYECTOS[0];
 }

@@ -3,17 +3,12 @@
         <mat-card-header class="card__header">
             <div mat-card-avatar class="avatar"></div>
             <mat-card-title-group>
-                <mat-card-title class="card__title">{{project.name}}</mat-card-title>
+                <mat-card-title class="card__title">{{proyecto.nombreProyecto}}</mat-card-title>
             </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
             <h3 class="card__content__title">Descripción:</h3>
-            <p class="card__content__description">{{project.description}}</p>
-            <h3 class="card__content__title">Tecnologías:</h3>
-            <p class="card__content__description">{{project.tecnologias}}</p>
-            <h3 class="card__content__title">Links:</h3>
-            <p class="card__content__description"><a href="{{project.repo}}">{{project.repo}}</a></p>
-            <p class="card__content__description"><a href="{{project.url}}">{{project.url}}</a></p>
+            <p class="card__content__description">{{proyecto.descripcion}}</p>
         </mat-card-content>
     </mat-card>
 </div>

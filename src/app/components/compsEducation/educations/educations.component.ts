@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Education } from 'src/app/interfaces/Education';
+import { Educacion } from 'src/app/interfaces/Educacion';
 import { AuthService } from 'src/app/services/auth.service';
 import { EducationService } from 'src/app/services/education.service';
 
@@ -9,11 +9,11 @@ import { EducationService } from 'src/app/services/education.service';
   styleUrls: ['./educations.component.css']
 })
 export class EducationsComponent implements OnInit {
-  educations: Education[] = [];
+  educaciones: Educacion[] = [];
 
   constructor(private educationService: EducationService, public authService: AuthService) {}
 
   ngOnInit(): void {
-    this.educationService.getEducation().subscribe(data => this.educations = data);
+    this.educationService.getEducation().subscribe(data => this.educaciones = data);
   }
 }

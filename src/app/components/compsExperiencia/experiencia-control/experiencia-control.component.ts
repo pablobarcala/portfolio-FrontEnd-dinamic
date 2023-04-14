@@ -21,7 +21,7 @@ export class ExperienciaControlComponent implements OnInit {
   onDelete(experiencia: Experiencia) {
     const dialogRef = this.dialog.open(DeleteConfComponent, {
       data: {
-        name: experiencia.name
+        name: experiencia.puesto
       }
     })
 

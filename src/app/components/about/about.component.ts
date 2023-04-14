@@ -22,7 +22,9 @@ export class AboutComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => this.personas = data);
+    this.personaService.getPersona().subscribe(data => {
+      this.personas = data
+    });
   }
 
   onEdit(persona: Persona){
@@ -30,9 +32,10 @@ export class AboutComponent implements OnInit {
       data: {
           title: this.title,
           id: persona.id, 
-          name: persona.fullname, 
-          personaTitle: persona.titulo,
-          description: persona.description
+          nombre: persona.nombre, 
+          apellido: persona.apellido,
+          titulo: persona.titulo,
+          descripcion: persona.descripcion
         }
     })
 

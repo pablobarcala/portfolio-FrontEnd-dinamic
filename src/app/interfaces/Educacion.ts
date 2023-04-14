@@ -1,10 +1,10 @@
-export interface Experiencia {
+export interface Educacion {
     id?: number;
-    puesto?: string;
-    nombre_empresa?: string;
+    titulo?: string;
+    nombreInstituto?: string;
     imagen?: string;
     fecha_inicio?: Date;
     fecha_fin?: Date;
-    trabajo_actual?: boolean;
+    en_progreso?: boolean;
     descripcion?: string;
 }

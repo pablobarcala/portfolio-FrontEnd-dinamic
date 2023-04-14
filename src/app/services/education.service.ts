@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Education } from '../interfaces/Education';
+import { Educacion } from '../interfaces/Educacion';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,16 +13,16 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EducationService {
-  apiUrl = 'http://localhost:5000/education'
+  apiUrl = 'http://localhost:8080/api/educacion'
 
   constructor(private http: HttpClient) {}
 
-  getEducation(): Observable<Education[]>{
-    return this.http.get<Education[]>(this.apiUrl);
+  getEducation(): Observable<Educacion[]>{
+    return this.http.get<Educacion[]>(this.apiUrl + '/lista/1');
   }
 
-  deleteEducation(education: Education): Observable<Education> {
-    const url = `${this.apiUrl}/${education.id}`;
-    return this.http.delete<Education>(url, httpOptions)
+  deleteEducation(educacion: Educacion): Observable<Educacion> {
+    const url = `${this.apiUrl}/delete/${educacion.id}`;
+    return this.http.delete<Educacion>(url, httpOptions)
   }
 }

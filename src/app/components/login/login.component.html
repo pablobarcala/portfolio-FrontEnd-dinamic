@@ -3,7 +3,7 @@
         <mat-card-header class="card-header">
             <mat-card-title class="card-title">LOGIN</mat-card-title>
         </mat-card-header>
-        <form [formGroup]="form" (submit)="onSubmit()" class="card-form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit($event)" class="card-form">
             <mat-form-field appearance="outline" class="card-form__input">
                 <mat-label>Ingrese su username</mat-label>
                 <input 

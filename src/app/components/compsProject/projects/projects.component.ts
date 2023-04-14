@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from 'src/app/interfaces/Project';
+import { Proyecto } from 'src/app/interfaces/Proyecto';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -9,11 +9,11 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit{
-  projects: Project[] = [];
+  proyectos: Proyecto[] = [];
 
   constructor(private projectService: ProjectService, public authService: AuthService){}
 
   ngOnInit(): void {
-    this.projectService.getProject().subscribe(data => this.projects = data);
+    this.projectService.getProject().subscribe(data => this.proyectos = data);
   }
 }

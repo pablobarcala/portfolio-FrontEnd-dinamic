@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Education } from 'src/app/interfaces/Education';
-import { EDUCATION } from 'src/app/interfaces/mock-educations';
+import { Educacion } from 'src/app/interfaces/Educacion';
+import { EDUCACION } from 'src/app/interfaces/mock-educations';
 
 @Component({
   selector: 'app-education-item',
@@ -8,5 +8,5 @@ import { EDUCATION } from 'src/app/interfaces/mock-educations';
   styleUrls: ['./education-item.component.css']
 })
 export class EducationItemComponent {
-  @Input() education: Education = EDUCATION[0];
+  @Input() educacion: Educacion = EDUCACION[0];
 }

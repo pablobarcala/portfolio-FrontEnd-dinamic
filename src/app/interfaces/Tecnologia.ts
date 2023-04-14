@@ -1,5 +1,5 @@
 export interface Tecnologia {
-    id: number;
-    name: string;
-    skillValue: number;
+    id?: number;
+    nombreTecnologia?: string;
+    porcentaje?: number;
 }

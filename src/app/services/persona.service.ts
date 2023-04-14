@@ -13,12 +13,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PersonaService {
-  apiUrl: string = 'http://localhost:5000/persona'
+  apiUrl = 'http://localhost:8080/api/persona'
 
   constructor(private http: HttpClient) {}
 
   getPersona(): Observable<Persona[]>{
-    return this.http.get<Persona[]>(this.apiUrl);
+    return this.http.get<Persona[]>(this.apiUrl + '/traer');
   }
 
   editPersona(persona: Persona): Observable<Persona>{

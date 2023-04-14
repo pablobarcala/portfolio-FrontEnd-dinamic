@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Project } from '../interfaces/Project';
+import { Proyecto } from '../interfaces/Proyecto';
 
 const httpOptions = {
   headers: new HttpHeaders ({
@@ -17,12 +17,12 @@ export class ProjectService {
 
   constructor(private http: HttpClient) {}
 
-  getProject(): Observable<Project[]>{
-    return this.http.get<Project[]>(this.apiUrl);
+  getProject(): Observable<Proyecto[]>{
+    return this.http.get<Proyecto[]>(this.apiUrl);
   }
 
-  deleteProject(project: Project): Observable<Project>{
-    const url = `${this.apiUrl}/${project.id}`;
-    return this.http.delete<Project>(url, httpOptions);
+  deleteProject(proyecto: Proyecto): Observable<Proyecto>{
+    const url = `${this.apiUrl}/${proyecto.id}`;
+    return this.http.delete<Proyecto>(url, httpOptions);
   }
 }
