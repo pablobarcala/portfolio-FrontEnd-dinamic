@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Persona } from 'src/app/interfaces/Persona';
-import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +7,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(public authService: AuthService){}
+  isLogged: boolean = false;
+
+  constructor(public tokenService: TokenService){
+    this.isLogged = tokenService.isLogged();
+  }
+
+  logout(){
+    this.tokenService.logOut();
+    location.reload();
+  }
 }

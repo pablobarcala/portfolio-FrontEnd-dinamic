@@ -7,7 +7,7 @@ import { Tecnologia } from '../interfaces/Tecnologia';
   providedIn: 'root'
 })
 export class TecnologiaService {
-  apiUrl: string = 'http://localhost:5000/tecnologia'
+  apiUrl: string = 'https://portfolio-xtso.onrender.com/api/tecnologia'
 
   constructor(private http: HttpClient) {}
 

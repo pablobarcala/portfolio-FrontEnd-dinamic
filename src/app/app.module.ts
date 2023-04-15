@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { MaterialModule } from './modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +25,9 @@ import { DeleteConfComponent } from './components/delete-conf/delete-conf.compon
 import { ProjectsComponent } from './components/compsProject/projects/projects.component';
 import { ProjectItemComponent } from './components/compsProject/project-item/project-item.component';
 import { ProjectControlComponent } from './components/compsProject/project-control/project-control.component';
+import { InterceptorService } from './services/interceptor.service';
+import { EducationAddComponent } from './components/compsEducation/education-add/education-add.component';
+import { EducationService } from './services/education.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { ProjectControlComponent } from './components/compsProject/project-contr
     DeleteConfComponent,
     ProjectsComponent,
     ProjectItemComponent,
-    ProjectControlComponent
+    ProjectControlComponent,
+    EducationAddComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import { ProjectControlComponent } from './components/compsProject/project-contr
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

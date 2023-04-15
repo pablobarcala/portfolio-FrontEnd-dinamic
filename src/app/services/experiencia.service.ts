@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  apiUrl: string = 'http://localhost:8080/api/experiencia'
+  apiUrl: string = 'https://portfolio-xtso.onrender.com/api/experiencia'
 
   constructor(private http: HttpClient) {}
 

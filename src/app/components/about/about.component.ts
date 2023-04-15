@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from 'src/app/services/persona.service';
 import { Persona } from 'src/app/interfaces/Persona';
-import { AuthService } from 'src/app/services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AboutEditComponent } from '../about-edit/about-edit.component';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-about',
@@ -14,12 +14,15 @@ export class AboutComponent implements OnInit {
   title: string = 'Acerca de'
 
   personas: Persona[] = []
+  isAdmin: any = false;
 
   constructor(
-    private personaService: PersonaService, 
-    public authService: AuthService, 
-    private dialog: MatDialog
-  ) {}
+    private personaService: PersonaService,
+    private dialog: MatDialog,
+    private tokenService: TokenService
+  ) {
+    this.isAdmin = tokenService.isAdmin();
+  }
 
   ngOnInit(): void {
     this.personaService.getPersona().subscribe(data => {

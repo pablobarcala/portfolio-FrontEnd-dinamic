@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EducationService {
-  apiUrl = 'http://localhost:8080/api/educacion'
+  apiUrl = 'https://portfolio-xtso.onrender.com/api/educacion'
 
   constructor(private http: HttpClient) {}
 
@@ -24,5 +24,10 @@ export class EducationService {
   deleteEducation(educacion: Educacion): Observable<Educacion> {
     const url = `${this.apiUrl}/delete/${educacion.id}`;
     return this.http.delete<Educacion>(url, httpOptions)
+  }
+
+  saveEducation(educacion: Educacion): Observable<Educacion> {
+    const url = `${this.apiUrl}/create/1`;
+    return this.http.post<Educacion>(url, educacion)
   }
 }

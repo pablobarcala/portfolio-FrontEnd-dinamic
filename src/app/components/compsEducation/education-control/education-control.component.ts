@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/interfaces/Educacion';
 import { EducationService } from 'src/app/services/education.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
+import { EducationAddComponent } from '../education-add/education-add.component';
 
 @Component({
   selector: 'app-education-control',
@@ -34,5 +35,15 @@ export class EducationControlComponent implements OnInit {
         })
       }
     });
+  }
+
+  onEdit() {
+    const dialogRef = this.dialog.open(EducationAddComponent)
+
+    dialogRef.afterClosed().subscribe(resp => {
+      if(resp){
+        this.educationService.saveEducation(resp.value).subscribe();
+      }
+    })
   }
 }

@@ -1,0 +1,71 @@
+<div class="dialog-container">
+    <h2 class="title">Agregar educacion</h2>
+    <form [formGroup]="form" class="form" (submit)="onSubmit($event)">
+        <!-- INSTITUTO -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese el nombre del instituto</mat-label>
+            <input 
+                matInput 
+                placeholder="Nombre del instituto" 
+                type="text"
+                formControlName="nombreInstituto"
+            >
+        </mat-form-field>
+
+        <!-- TITULO -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese el título</mat-label>
+            <input 
+                matInput 
+                placeholder="Título" 
+                type="text"
+                formControlName="titulo"
+            >
+        </mat-form-field>
+
+        <!-- DESCRIPCION -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese una descripción</mat-label>
+            <input 
+                matInput 
+                placeholder="Descripción" 
+                type="text"
+                formControlName="descripcion"
+            >
+        </mat-form-field>
+
+        <!-- FECHA INICIO
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha de inicio</mat-label>
+            <input 
+                matInput 
+                placeholder="Fecha de incio"
+            >
+        </mat-form-field> -->
+
+        <!-- FECHA FIN
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha de fin</mat-label>
+            <input 
+                matInput 
+                placeholder="Fecha de fin" 
+            >
+        </mat-form-field> -->
+
+        <!-- EN PROGRESO -->
+        <mat-checkbox formControlName="en_progreso">En progreso</mat-checkbox>
+
+        <div class="container-buttons">
+            <button
+                mat-raised-button
+                color="accent"
+                type="submit"
+            >Enviar</button>
+            <button
+                mat-raised-button
+                (click)="onNoClick()"
+                type="button"
+            >Salir</button>
+        </div>
+    </form>
+</div>

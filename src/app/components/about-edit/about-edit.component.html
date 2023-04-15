@@ -1,12 +1,12 @@
 <div class="dialog-container">
-    <form [formGroup]="form" (submit)="onSubmit()">
+    <form [formGroup]="form" (submit)="onSubmit($event)">
         <mat-accordion>
             <!-- ----------------- CARD NOMBRE --------------------- -->
             <mat-expansion-panel class="card-panel">
                 <mat-expansion-panel-header>
                     <mat-panel-title 
                         class="card-title"
-                    >Nombre:<p class="card-name">{{form.value.fullname}}</p>
+                    >Nombre:<p class="card-name">{{form.value.nombre}}</p>
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <mat-form-field appearance="outline" color="accent" class="card-field">
@@ -15,7 +15,26 @@
                         matInput 
                         placeholder="Ingrese su nombre" 
                         type="text"
-                        formControlName="fullname"
+                        formControlName="nombre"
+                    >
+                </mat-form-field>
+            </mat-expansion-panel>
+
+            <!-- ----------------- CARD APELLIDO --------------------- -->
+            <mat-expansion-panel class="card-panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title 
+                        class="card-title"
+                    >Apellido:<p class="card-name">{{form.value.apellido}}</p>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="outline" color="accent" class="card-field">
+                    <mat-label>Apellido</mat-label>
+                    <input 
+                        matInput 
+                        placeholder="Ingrese su apellido" 
+                        type="text"
+                        formControlName="apellido"
                     >
                 </mat-form-field>
             </mat-expansion-panel>
@@ -50,7 +69,7 @@
                         matInput 
                         placeholder="Ingrese su información" 
                         type="text"
-                        formControlName="description" 
+                        formControlName="descripcion" 
                         class="textarea-input"   
                     ></textarea>
                 </mat-form-field>

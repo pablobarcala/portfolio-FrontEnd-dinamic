@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutEditComponent } from './about-edit.component';
+import { AppModule } from 'src/app/app.module';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('AboutEditComponent', () => {
   let component: AboutEditComponent;
@@ -8,7 +10,12 @@ describe('AboutEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AboutEditComponent ]
+      imports: [ AppModule ],
+      declarations: [ AboutEditComponent ],
+      providers: [ 
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }
+      ]
     })
     .compileComponents();
 

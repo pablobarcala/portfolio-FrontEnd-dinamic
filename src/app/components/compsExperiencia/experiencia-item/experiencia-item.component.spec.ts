@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExperienciaItemComponent } from './experiencia-item.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('ExperienciaItemComponent', () => {
   let component: ExperienciaItemComponent;
@@ -8,6 +9,7 @@ describe('ExperienciaItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ AppModule ],
       declarations: [ ExperienciaItemComponent ]
     })
     .compileComponents();

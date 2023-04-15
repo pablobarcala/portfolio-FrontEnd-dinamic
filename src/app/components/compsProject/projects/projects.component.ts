@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/interfaces/Proyecto';
-import { AuthService } from 'src/app/services/auth.service';
 import { ProjectService } from 'src/app/services/project.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +11,14 @@ import { ProjectService } from 'src/app/services/project.service';
 export class ProjectsComponent implements OnInit{
   proyectos: Proyecto[] = [];
 
-  constructor(private projectService: ProjectService, public authService: AuthService){}
+  isAdmin: any = false;
+
+  constructor(
+    private projectService: ProjectService, 
+    private tokenService: TokenService
+  ){
+    this.isAdmin = tokenService.isAdmin();
+  }
 
   ngOnInit(): void {
     this.projectService.getProject().subscribe(data => this.proyectos = data);

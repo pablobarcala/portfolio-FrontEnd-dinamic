@@ -2,7 +2,7 @@
     <mat-card class="card-about">
         <mat-card-header class="card-header">
             <img [src]="'assets/images/' + persona.imagen" class="card-profile" alt="Imagen perfil">
-            <mat-card-title class="card-title">{{persona.nombre}}</mat-card-title>
+            <mat-card-title class="card-title">{{persona.nombre}} {{persona.apellido}}</mat-card-title>
             <mat-card-subtitle class="card-subtitle">{{persona.titulo}}</mat-card-subtitle>
         </mat-card-header>
         <button 
@@ -10,7 +10,7 @@
             color="accent" 
             (click)="onEdit(persona)"
             class="btn-edit"
-            
+            *ngIf="isAdmin"
         >
             <i class="fa-regular fa-edit"></i>
             Editar información personal

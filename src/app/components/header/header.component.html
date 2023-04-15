@@ -33,19 +33,13 @@
             routerLink="login" 
             mat-flat-button 
             color="accent"
-            
+            *ngIf="!isLogged"
         >LOGIN</button>
         <button 
             mat-flat-button 
             color="accent"
-            
-            
+            *ngIf="isLogged"
+            (click)="logout()"
         >LOGOUT</button>
     </div>
 </div>
-
-<!-- 
-    *ngIf="!authService.logIn"
-    *ngIf="authService.logIn"
-    (click)="authService.logout()"
- -->

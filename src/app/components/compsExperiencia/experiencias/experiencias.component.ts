@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/interfaces/Experiencia';
-import { AuthService } from 'src/app/services/auth.service';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-experiencias',
@@ -11,7 +11,14 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 export class ExperienciasComponent implements OnInit {
   experiencias: Experiencia[] = [];
 
-  constructor(private experienciaService: ExperienciaService, public authService: AuthService) {}
+  isAdmin: any = false;
+
+  constructor(
+    private experienciaService: ExperienciaService, 
+    private tokenService: TokenService
+  ) {
+    this.isAdmin = tokenService.isAdmin();
+  }
 
   ngOnInit(): void {
     this.experienciaService.getExperiencia().subscribe(data => this.experiencias = data);

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Persona } from '../interfaces/Persona';
 
 const httpOptions = {
@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PersonaService {
-  apiUrl = 'http://localhost:8080/api/persona'
+  apiUrl = 'https://portfolio-xtso.onrender.com/api/persona'
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +22,7 @@ export class PersonaService {
   }
 
   editPersona(persona: Persona): Observable<Persona>{
-    const url = `${this.apiUrl}/${persona.id}`;
-    return this.http.put<Persona>(url, persona, httpOptions);
+    const url = `${this.apiUrl}/editar/${persona.id}`;
+    return this.http.put<Persona>(url, persona, httpOptions).pipe(tap(() => location.reload()));
   }
 }

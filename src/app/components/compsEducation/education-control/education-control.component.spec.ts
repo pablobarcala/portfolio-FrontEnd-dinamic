@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EducationControlComponent } from './education-control.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('EducationControlComponent', () => {
   let component: EducationControlComponent;
@@ -8,6 +9,7 @@ describe('EducationControlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ AppModule ],
       declarations: [ EducationControlComponent ]
     })
     .compileComponents();

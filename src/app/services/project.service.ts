@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectService {
-  apiUrl = 'http://localhost:5000/project';
+  apiUrl = 'https://portfolio-xtso.onrender.com/api/proyecto';
 
   constructor(private http: HttpClient) {}
 

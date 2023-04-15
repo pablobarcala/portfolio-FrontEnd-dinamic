@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectControlComponent } from './project-control.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('ProjectControlComponent', () => {
   let component: ProjectControlComponent;
@@ -8,6 +9,7 @@ describe('ProjectControlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ AppModule ],
       declarations: [ ProjectControlComponent ]
     })
     .compileComponents();
