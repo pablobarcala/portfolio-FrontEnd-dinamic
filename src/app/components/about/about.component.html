@@ -1,7 +1,7 @@
 <div *ngFor="let persona of personas" class="container-about">
     <mat-card class="card-about">
         <mat-card-header class="card-header">
-            <img [src]="'assets/images/' + persona.imagen" class="card-profile" alt="Imagen perfil">
+            <img [src]="'assets/images/profile.jpeg'" class="card-profile" alt="Imagen perfil">
             <mat-card-title class="card-title">{{persona.nombre}} {{persona.apellido}}</mat-card-title>
             <mat-card-subtitle class="card-subtitle">{{persona.titulo}}</mat-card-subtitle>
         </mat-card-header>
@@ -24,4 +24,16 @@
             <p class="panel-text">{{persona.descripcion}}</p>
         </mat-expansion-panel>
     </mat-accordion>
+</div>
+<div>
+    <button
+        mat-flat-button
+        color="accent" 
+        class="btn-edit"
+        *ngIf="isAdmin"
+        (click)="onAdd()"
+    >
+        <i class="fa-regular fa-edit"></i>
+        Agregar información personal
+    </button>
 </div>

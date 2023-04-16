@@ -28,6 +28,7 @@ import { ProjectControlComponent } from './components/compsProject/project-contr
 import { InterceptorService } from './services/interceptor.service';
 import { EducationAddComponent } from './components/compsEducation/education-add/education-add.component';
 import { EducationService } from './services/education.service';
+import { AboutAddComponent } from './components/about-add/about-add.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EducationService } from './services/education.service';
     ProjectsComponent,
     ProjectItemComponent,
     ProjectControlComponent,
-    EducationAddComponent
+    EducationAddComponent,
+    AboutAddComponent
   ],
   imports: [
     BrowserModule,

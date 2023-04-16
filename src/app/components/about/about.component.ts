@@ -4,6 +4,7 @@ import { Persona } from 'src/app/interfaces/Persona';
 import { MatDialog } from '@angular/material/dialog';
 import { AboutEditComponent } from '../about-edit/about-edit.component';
 import { TokenService } from 'src/app/services/token.service';
+import { AboutAddComponent } from '../about-add/about-add.component';
 
 @Component({
   selector: 'app-about',
@@ -50,5 +51,16 @@ export class AboutComponent implements OnInit {
         });
       }
     })
+  }
+
+  onAdd(){
+    const dialogRef = this.dialog.open(AboutAddComponent, {
+      data: {
+        title: this.title
+      }
+    })
+
+    dialogRef.afterClosed().subscribe();
+    location.reload();
   }
 }

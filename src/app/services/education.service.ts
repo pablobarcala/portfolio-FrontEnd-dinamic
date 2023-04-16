@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EducationService {
-  apiUrl = 'https://portfolio-xtso.onrender.com/api/educacion'
+  apiUrl = 'https://portfolio-service-vgkk.onrender.com/api/educacion'
 
   constructor(private http: HttpClient) {}
 

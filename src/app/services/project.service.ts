@@ -13,16 +13,22 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectService {
-  apiUrl = 'https://portfolio-xtso.onrender.com/api/proyecto';
+  apiUrl = 'https://portfolio-service-vgkk.onrender.com/api/proyecto';
 
   constructor(private http: HttpClient) {}
 
   getProject(): Observable<Proyecto[]>{
-    return this.http.get<Proyecto[]>(this.apiUrl);
+    const url = `${this.apiUrl}/lista/1`;
+    return this.http.get<Proyecto[]>(url);
   }
 
   deleteProject(proyecto: Proyecto): Observable<Proyecto>{
-    const url = `${this.apiUrl}/${proyecto.id}`;
+    const url = `${this.apiUrl}/delete/${proyecto.id}`;
     return this.http.delete<Proyecto>(url, httpOptions);
+  }
+
+  saveProject(proyecto: Proyecto): Observable<Proyecto>{
+    const url = `${this.apiUrl}/create/1`;
+    return this.http.post<Proyecto>(url, proyecto);
   }
 }

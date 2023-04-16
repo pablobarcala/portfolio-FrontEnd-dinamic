@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PersonaService {
-  apiUrl = 'https://portfolio-xtso.onrender.com/api/persona'
+  apiUrl = 'https://portfolio-service-vgkk.onrender.com/api/persona'
 
   constructor(private http: HttpClient) {}
 
@@ -24,5 +24,10 @@ export class PersonaService {
   editPersona(persona: Persona): Observable<Persona>{
     const url = `${this.apiUrl}/editar/${persona.id}`;
     return this.http.put<Persona>(url, persona, httpOptions).pipe(tap(() => location.reload()));
+  }
+
+  addPersona(persona: Persona): Observable<Persona>{
+    const url = `${this.apiUrl}/create`;
+    return this.http.post<Persona>(url, persona);
   }
 }

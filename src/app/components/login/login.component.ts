@@ -32,6 +32,7 @@ export class LoginComponent {
         this.router.navigate(['']).then(() => location.reload());
       }, err => {
         console.log(err);
+        alert("Usuario o contraseña incorrectos.");
       })
     }
   }

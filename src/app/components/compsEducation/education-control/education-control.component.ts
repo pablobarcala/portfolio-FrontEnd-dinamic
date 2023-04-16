@@ -40,10 +40,6 @@ export class EducationControlComponent implements OnInit {
   onEdit() {
     const dialogRef = this.dialog.open(EducationAddComponent)
 
-    dialogRef.afterClosed().subscribe(resp => {
-      if(resp){
-        this.educationService.saveEducation(resp.value).subscribe();
-      }
-    })
+    dialogRef.afterClosed().subscribe()
   }
 }

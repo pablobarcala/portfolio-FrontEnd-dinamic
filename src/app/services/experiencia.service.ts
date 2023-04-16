@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ExperienciaService {
-  apiUrl: string = 'https://portfolio-xtso.onrender.com/api/experiencia'
+  apiUrl: string = 'https://portfolio-service-vgkk.onrender.com/api/experiencia'
 
   constructor(private http: HttpClient) {}
 
@@ -24,5 +24,10 @@ export class ExperienciaService {
   deleteExperiencia(experiencia: Experiencia): Observable<Experiencia> {
     const url = `${this.apiUrl}/delete/${experiencia.id}`;
     return this.http.delete<Experiencia>(url, httpOptions)
+  }
+
+  saveExperiencia(experiencia: Experiencia): Observable<Experiencia> {
+    const url = `${this.apiUrl}/create/1`;
+    return this.http.post<Experiencia>(url, experiencia);
   }
 }

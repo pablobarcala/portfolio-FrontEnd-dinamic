@@ -8,7 +8,7 @@ import { JwtDto } from '../interfaces/JwtDto';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl: string = 'https://portfolio-xtso.onrender.com/api/auth';
+  apiUrl: string = 'https://portfolio-service-vgkk.onrender.com/api/auth';
 
   constructor(private http: HttpClient){}
 
