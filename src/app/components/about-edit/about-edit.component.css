@@ -61,16 +61,18 @@
     margin: 0 1rem;
 }
 
+/* ---------------------- MEDIA QUERIES ------------------- */
 
-@media (max-width: 900px) {
+@media (max-width: 900px){
     .dialog-container{
-        width: 30rem;
+        width: 35rem;
+        max-height: 50rem;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .dialog-container{
-        width: 25rem;
+        width: 30rem;
         max-height: 50rem;
     }
 
@@ -83,9 +85,9 @@
     }
 }
 
-@media (max-width: 438px) {
+@media (max-width: 576px) {
     .dialog-container{
-        width: 20rem;
+        width: 25rem;
         max-height: 60rem;
     }
 
@@ -95,9 +97,5 @@
 
     .textarea-input {
         min-height: 30rem;
-    }
-
-    .card-name {
-        display: none;
     }
 }

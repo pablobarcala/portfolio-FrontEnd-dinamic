@@ -1,4 +1,4 @@
-import { Component, Inject, Output, EventEmitter } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Persona } from 'src/app/interfaces/Persona';
@@ -36,10 +36,9 @@ export class AboutEditComponent {
       this.form.markAllAsTouched()
     }
     
-    this.personaService.editPersona(this.form.value).subscribe(data => {
-      console.log(data);
+    this.personaService.editPersona(this.form.value).subscribe(() => {
+      this.dialogRef.close(this.form.value);
     }, err => console.log(err));
-    this.dialogRef.close();
   }
 
   onNoClick(): void {

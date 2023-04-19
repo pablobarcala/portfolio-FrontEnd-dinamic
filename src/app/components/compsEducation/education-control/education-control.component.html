@@ -3,7 +3,7 @@
         <div class="container-header">
             <h2>Lista de elementos</h2>
             <div class="container-header-buttons">
-                <button mat-flat-button color="primary" (click)="onEdit()">Agregar</button>
+                <button mat-flat-button color="primary" (click)="onAdd()">Agregar</button>
                 <button mat-flat-button color="warn" routerLink="">Volver</button>
             </div>
         </div>
@@ -16,7 +16,7 @@
                     <p>{{education.descripcion}}</p>
                 </div>
                 <div class="card-buttons">
-                    <i class="fa-regular fa-edit button"></i>
+                    <i class="fa-regular fa-edit button" (click)="onEdit(education)"></i>
                     <i class="fa-solid fa-times button" (click)="onDelete(education)"></i>
                 </div>
             </div>

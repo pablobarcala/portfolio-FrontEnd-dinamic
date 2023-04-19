@@ -1,0 +1,75 @@
+.dialog-container {
+    width: 40rem;
+    min-height: 10rem;
+    max-height: 40rem;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 1.3rem;
+}
+
+.form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.form-field {
+    width: 100%;
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 30%;
+}
+
+/* -------------------- FECHAS ------------------ */
+
+.container-fechas {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fecha {
+    padding: 0;
+}
+
+.fecha-input {
+    width: 100%;
+}
+
+/* --------------------- MEDIA QUERIES -------------------- */
+@media (max-width: 900px){
+    .dialog-container {
+        width: 35rem;
+        max-height: 50rem;
+    }
+}
+
+@media (max-width: 768px){
+    .dialog-container{
+        width: 30rem;
+        max-height: 50rem;
+    }
+
+    .container-buttons {
+        width: 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .dialog-container {
+        width: 22rem;
+        max-height: 60rem;
+    }
+
+    .container-buttons {
+        width: 60%;
+    }
+}

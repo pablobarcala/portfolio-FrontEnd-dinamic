@@ -70,3 +70,36 @@
 .fa-times.button {
     color: rgb(168, 3, 3);
 }
+
+/* ----------------- MEDIA QUERIES ----------------- */
+@media (max-width: 992px){
+    .container-list{
+        width: 80%;
+    }
+
+    .button {
+        font-size: 1.2rem;
+    }
+
+    .card-buttons {
+        width: 3.5rem;
+    }
+}
+
+@media (max-width: 576px){
+    .container-list{
+        width: 100%;
+    }
+
+    .container-header > h2 {
+        font-size: 1.35rem;
+    }
+
+    .button {
+        font-size: 1.3rem;
+    }
+
+    .card-buttons {
+        width: 4rem;
+    }
+}

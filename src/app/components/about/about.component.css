@@ -36,7 +36,7 @@
 }
 
 .card-subtitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 /* -------------------------- ACERCA DE PANEL ---------------------------- */
@@ -56,4 +56,25 @@
 
 .full-width {
     width: 100%;
+}
+
+/* ------------------------- MEDIA QUERIES --------------------------- */
+@media (max-width: 768px) {
+    .card-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .panel-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .panel-text {
+        font-size: 1.1rem;
+    }
 }

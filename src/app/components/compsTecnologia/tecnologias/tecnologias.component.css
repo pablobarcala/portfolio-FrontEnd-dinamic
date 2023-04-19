@@ -1,5 +1,15 @@
+.component-header {
+    display: flex;
+    align-items: center;
+}
+
+.container-tec {
+    padding: 0 1.5rem;
+}
+
 .container-title {
     margin: 3% 0;
+    margin-right: 2%;
     background-color: rgb(99, 99, 99);
     width: 20%;
     padding: 1% 1.5%;

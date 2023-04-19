@@ -7,13 +7,15 @@ import { EducationControlComponent } from 'src/app/components/compsEducation/edu
 import { AuthGuardService } from 'src/app/services/auth.guard.service';
 import { ExperienciaControlComponent } from 'src/app/components/compsExperiencia/experiencia-control/experiencia-control.component';
 import { ProjectControlComponent } from 'src/app/components/compsProject/project-control/project-control.component';
+import { TecnologiaControlComponent } from 'src/app/components/compsTecnologia/tecnologia-control/tecnologia-control.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'education', component: EducationControlComponent, canActivate: [AuthGuardService]},
   {path: 'experiencia', component: ExperienciaControlComponent, canActivate: [AuthGuardService]},
-  {path: 'projects', component: ProjectControlComponent, canActivate: [AuthGuardService]}
+  {path: 'projects', component: ProjectControlComponent, canActivate: [AuthGuardService]},
+  {path: 'tecnologias', component: TecnologiaControlComponent, canActivate: [AuthGuardService]}
 ]
 
 

@@ -29,6 +29,12 @@ import { InterceptorService } from './services/interceptor.service';
 import { EducationAddComponent } from './components/compsEducation/education-add/education-add.component';
 import { EducationService } from './services/education.service';
 import { AboutAddComponent } from './components/about-add/about-add.component';
+import { ExperienciaAddComponent } from './components/compsExperiencia/experiencia-add/experiencia-add.component';
+import { ExperienciaEditComponent } from './components/compsExperiencia/experiencia-edit/experiencia-edit.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { TecnologiaControlComponent } from './components/compsTecnologia/tecnologia-control/tecnologia-control.component';
+import { ProjectAddComponent } from './components/compsProject/project-add/project-add.component';
+import { ProjectEditComponent } from './components/compsProject/project-edit/project-edit.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,13 @@ import { AboutAddComponent } from './components/about-add/about-add.component';
     ProjectItemComponent,
     ProjectControlComponent,
     EducationAddComponent,
-    AboutAddComponent
+    AboutAddComponent,
+    ExperienciaAddComponent,
+    ExperienciaEditComponent,
+    FooterComponent,
+    TecnologiaControlComponent,
+    ProjectAddComponent,
+    ProjectEditComponent
   ],
   imports: [
     BrowserModule,

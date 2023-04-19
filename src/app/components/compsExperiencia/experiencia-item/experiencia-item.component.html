@@ -3,13 +3,18 @@
         <mat-card-header class="card__header">
             <div mat-card-avatar class="avatar"></div>
             <mat-card-title-group>
-                <mat-card-title class="card__title">{{experiencia.puesto}}</mat-card-title>
+                <mat-card-title class="card__title">{{experiencia.nombre_empresa}}</mat-card-title>
+                <mat-card-subtitle class="card__subtitle">{{experiencia.puesto}}</mat-card-subtitle>
+                <div class="container_fecha" *ngIf="experiencia.fecha_inicio != null">
+                    <span>{{experiencia.fecha_inicio | date:'dd/MM/yyyy'}}</span>
+                    <span *ngIf="experiencia.fecha_fin != null"> - {{experiencia.fecha_fin | date:'dd/MM/yyyy'}}</span>
+                </div>
             </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
+            <mat-card-subtitle class="actual" *ngIf="experiencia.trabajo_actual">Trabajo actual</mat-card-subtitle>
             <h3 class="card__content__title">Descripción:</h3>
             <p class="card__content__description">{{experiencia.descripcion}}</p>
         </mat-card-content>
     </mat-card>
 </div>
-

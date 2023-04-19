@@ -1,0 +1,56 @@
+<div class="dialog-container">
+    <h2 class="title">Agregar proyecto</h2>
+    <form [formGroup]="form" class="form" (submit)="onSubmit($event)">
+        <!-- NOMBRE PROYECTO -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese el nombre del proyecto</mat-label>
+            <input 
+                matInput 
+                placeholder="Nombre del proyecto" 
+                type="text"
+                formControlName="nombreProyecto"
+            >
+        </mat-form-field>
+
+        <!-- DESCRIPCION -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese una descripción</mat-label>
+            <input 
+                matInput 
+                placeholder="Descripción" 
+                type="text"
+                formControlName="descripcion"
+            >
+        </mat-form-field>
+
+        <!-- FECHA -->
+        <div class="fecha">
+            <mat-form-field appearance="outline" class="fecha-input">
+                <mat-label>Fecha</mat-label>
+                <input 
+                    matInput 
+                    [matDatepicker]="picker"
+                    placeholder="Fecha"
+                    formControlName="fecha"
+                >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="container-buttons">
+            <button
+                mat-raised-button
+                color="accent"
+                type="submit"
+            >Enviar</button>
+            <button
+                mat-raised-button
+                (click)="onNoClick()"
+                type="button"
+            >Salir</button>
+        </div>
+    </form>
+</div>
+

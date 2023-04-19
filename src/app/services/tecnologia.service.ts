@@ -13,13 +13,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TecnologiaService {
-  apiUrl = 'https://portfolio-service-vgkk.onrender.com/api/tecnologia';
+  apiUrl = 'https://portfolio-service-vgkk.onrender.com/api/tecnologia'
 
   constructor(private http: HttpClient) {}
 
   getTecnologia(): Observable<Tecnologia[]> {
-    const url = `${this.apiUrl}/lista/1`;
-    return this.http.get<Tecnologia[]>(url);
+    return this.http.get<Tecnologia[]>(this.apiUrl + '/lista/1');
   }
 
   deleteTecnologia(tecnologia: Tecnologia): Observable<Tecnologia>{

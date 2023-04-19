@@ -11,7 +11,7 @@ body {
     background-color: rgb(230, 230, 230);
 }
 
-h2,p {
+h2,h3,p {
     margin: 0 !important;
 }
 

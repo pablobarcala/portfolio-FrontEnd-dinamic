@@ -1,0 +1,88 @@
+<div class="dialog-container">
+    <h2 class="title">Agregar experiencia</h2>
+    <form [formGroup]="form" class="form" (submit)="onSubmit($event)">
+        <!-- NOMBRE EMPRESA -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese el nombre de la empresa</mat-label>
+            <input 
+                matInput 
+                placeholder="Nombre de la empresa" 
+                type="text"
+                formControlName="nombre_empresa"
+            >
+        </mat-form-field>
+
+        <!-- PUESTO -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese su puesto</mat-label>
+            <input 
+                matInput 
+                placeholder="Puesto" 
+                type="text"
+                formControlName="puesto"
+            >
+        </mat-form-field>
+
+        <!-- DESCRIPCION -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese una descripción</mat-label>
+            <input 
+                matInput 
+                placeholder="Descripción" 
+                type="text"
+                formControlName="descripcion"
+            >
+        </mat-form-field>
+
+        <div class="container-fechas row">
+            <!-- FECHA DE INICIO -->
+            <div class="fecha col-12 col-sm-5">
+                <mat-form-field appearance="outline" class="fecha-input">
+                    <mat-label>Fecha de inicio</mat-label>
+                    <input 
+                        matInput 
+                        [matDatepicker]="pickerInicio"
+                        placeholder="Fecha de inicio"
+                        formControlName="fecha_inicio"
+                    >
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerInicio></mat-datepicker>
+                </mat-form-field>
+            </div>
+    
+            <!-- FECHA DE FIN -->
+            <div class="fecha col-12 col-sm-5">
+                <mat-form-field appearance="outline" class="fecha-input">
+                    <mat-label>Fecha de finalización</mat-label>
+                    <input 
+                        matInput 
+                        [matDatepicker]="pickerFin"
+                        placeholder="Fecha de finalización"
+                        formControlName="fecha_fin"
+                    >
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerFin"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerFin></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- TRABAJO ACTUAL -->
+        <mat-checkbox formControlName="trabajo_actual">Trabajo actual</mat-checkbox>
+
+        <div class="container-buttons">
+            <button
+                mat-raised-button
+                color="accent"
+                type="submit"
+            >Enviar</button>
+            <button
+                mat-raised-button
+                (click)="onNoClick()"
+                type="button"
+            >Salir</button>
+        </div>
+    </form>
+</div>
+

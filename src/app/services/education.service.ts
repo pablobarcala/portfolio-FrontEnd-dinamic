@@ -30,4 +30,9 @@ export class EducationService {
     const url = `${this.apiUrl}/create/1`;
     return this.http.post<Educacion>(url, educacion)
   }
+
+  editEducation(educacion: Educacion): Observable<Educacion> {
+    const url = `${this.apiUrl}/edit/1/${educacion.id}`;
+    return this.http.put<Educacion>(url, educacion);
+  }
 }

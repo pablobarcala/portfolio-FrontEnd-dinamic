@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Proyecto } from 'src/app/interfaces/Proyecto';
 import { ProjectService } from 'src/app/services/project.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
+import { ProjectAddComponent } from '../project-add/project-add.component';
 
 @Component({
   selector: 'app-project-control',
@@ -16,6 +17,16 @@ export class ProjectControlComponent implements OnInit{
 
   ngOnInit(): void {
     this.projectService.getProject().subscribe(data => this.projects = data);
+  }
+
+  onAdd() {
+    const dialogRef = this.dialog.open(ProjectAddComponent)
+
+    dialogRef.afterClosed().subscribe((resp) => {
+      if(resp) {
+        location.reload();
+      }
+    })
   }
 
   onDelete(project: Proyecto): void {

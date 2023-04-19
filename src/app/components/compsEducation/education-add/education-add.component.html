@@ -34,23 +34,39 @@
             >
         </mat-form-field>
 
-        <!-- FECHA INICIO
-        <mat-form-field appearance="outline">
-            <mat-label>Fecha de inicio</mat-label>
-            <input 
-                matInput 
-                placeholder="Fecha de incio"
-            >
-        </mat-form-field> -->
-
-        <!-- FECHA FIN
-        <mat-form-field appearance="outline">
-            <mat-label>Fecha de fin</mat-label>
-            <input 
-                matInput 
-                placeholder="Fecha de fin" 
-            >
-        </mat-form-field> -->
+        <div class="container-fechas row">
+            <!-- FECHA DE INICIO -->
+            <div class="fecha col-12 col-sm-5">
+                <mat-form-field appearance="outline" class="fecha-input">
+                    <mat-label>Fecha de inicio</mat-label>
+                    <input 
+                        matInput 
+                        [matDatepicker]="pickerInicio"
+                        placeholder="Fecha de inicio"
+                        formControlName="fecha_inicio"
+                    >
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerInicio></mat-datepicker>
+                </mat-form-field>
+            </div>
+    
+            <!-- FECHA DE FIN -->
+            <div class="fecha col-12 col-sm-5">
+                <mat-form-field appearance="outline" class="fecha-input">
+                    <mat-label>Fecha de finalización</mat-label>
+                    <input 
+                        matInput 
+                        [matDatepicker]="pickerFin"
+                        placeholder="Fecha de finalización"
+                        formControlName="fecha_fin"
+                    >
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerFin"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerFin></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
 
         <!-- EN PROGRESO -->
         <mat-checkbox formControlName="en_progreso">En progreso</mat-checkbox>

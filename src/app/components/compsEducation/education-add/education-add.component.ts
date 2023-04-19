@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDatepicker } from '@angular/material/datepicker';
 import { MatDialogRef } from '@angular/material/dialog';
 import { EducationService } from 'src/app/services/education.service';
 
@@ -20,7 +21,9 @@ export class EducationAddComponent {
       nombreInstituto: [''],
       titulo: [''],
       descripcion: [''],
-      en_progreso: []
+      en_progreso: [false],
+      fecha_inicio: [''],
+      fecha_fin: ['']
     });
   }
 
@@ -31,9 +34,9 @@ export class EducationAddComponent {
       this.form.markAllAsTouched();
     }
 
-    this.educacionService.saveEducation(this.form.value).subscribe();
-    this.dialogRef.close();
-    location.reload();
+    this.educacionService.saveEducation(this.form.value).subscribe(() => {
+      this.dialogRef.close(this.form.value);
+    });
   }
 
   onNoClick(){

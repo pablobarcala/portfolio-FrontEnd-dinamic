@@ -1,5 +1,16 @@
-<div class="container-title">
-    <h2>SKILLS:</h2>
+<div class="component-header">
+    <div class="container-title">
+        <h2>SKILLS:</h2>
+    </div>
+    <button 
+        mat-flat-button 
+        color="accent"
+        *ngIf="isAdmin"
+        routerLink="tecnologia"
+    >
+        <i class="fa-regular fa-edit"></i>
+        Editar tecnologías
+    </button>
 </div>
 <div class="row container-tec">
     <app-tecnologia-item

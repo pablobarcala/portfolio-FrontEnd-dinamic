@@ -4,6 +4,9 @@
             <div mat-card-avatar class="avatar"></div>
             <mat-card-title-group>
                 <mat-card-title class="card__title">{{proyecto.nombreProyecto}}</mat-card-title>
+                <div class="container_fecha" *ngIf="proyecto.fecha != null">
+                    <span>{{proyecto.fecha | date:'dd/MM/yyyy'}}</span>
+                </div>
             </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
@@ -12,5 +15,3 @@
         </mat-card-content>
     </mat-card>
 </div>
-
-

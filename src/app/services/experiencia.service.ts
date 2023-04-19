@@ -30,4 +30,9 @@ export class ExperienciaService {
     const url = `${this.apiUrl}/create/1`;
     return this.http.post<Experiencia>(url, experiencia);
   }
+
+  editExperiencia(experiencia: Experiencia): Observable<Experiencia> {
+    const url = `${this.apiUrl}/edit/1/${experiencia.id}`;
+    return this.http.put<Experiencia>(url, experiencia);
+  }
 }
