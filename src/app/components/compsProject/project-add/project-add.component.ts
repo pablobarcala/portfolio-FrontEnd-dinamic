@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -17,7 +17,7 @@ export class ProjectAddComponent {
     private formBuilder: FormBuilder
   ) {
     this.form = formBuilder.group({
-      nombreProyecto: [''],
+      nombreProyecto: ['', Validators.required],
       descripcion: [''],
       fecha: ['']
     })

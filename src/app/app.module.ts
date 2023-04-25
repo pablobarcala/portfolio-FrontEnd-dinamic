@@ -35,6 +35,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TecnologiaControlComponent } from './components/compsTecnologia/tecnologia-control/tecnologia-control.component';
 import { ProjectAddComponent } from './components/compsProject/project-add/project-add.component';
 import { ProjectEditComponent } from './components/compsProject/project-edit/project-edit.component';
+import { TecnologiaAddComponent } from './components/compsTecnologia/tecnologia-add/tecnologia-add.component';
+import { TecnologiaEditComponent } from './components/compsTecnologia/tecnologia-edit/tecnologia-edit.component';
+import { LogoutConfComponent } from './components/logout-conf/logout-conf.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,10 @@ import { ProjectEditComponent } from './components/compsProject/project-edit/pro
     FooterComponent,
     TecnologiaControlComponent,
     ProjectAddComponent,
-    ProjectEditComponent
+    ProjectEditComponent,
+    TecnologiaAddComponent,
+    TecnologiaEditComponent,
+    LogoutConfComponent
   ],
   imports: [
     BrowserModule,

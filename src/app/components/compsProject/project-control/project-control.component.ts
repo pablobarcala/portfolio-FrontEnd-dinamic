@@ -4,6 +4,7 @@ import { Proyecto } from 'src/app/interfaces/Proyecto';
 import { ProjectService } from 'src/app/services/project.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
 import { ProjectAddComponent } from '../project-add/project-add.component';
+import { ProjectEditComponent } from '../project-edit/project-edit.component';
 
 @Component({
   selector: 'app-project-control',
@@ -21,6 +22,23 @@ export class ProjectControlComponent implements OnInit{
 
   onAdd() {
     const dialogRef = this.dialog.open(ProjectAddComponent)
+
+    dialogRef.afterClosed().subscribe((resp) => {
+      if(resp) {
+        location.reload();
+      }
+    })
+  }
+
+  onEdit(project: Proyecto) {
+    const dialogRef = this.dialog.open(ProjectEditComponent, {
+      data: {
+        id: project.id,
+        nombreProyecto: project.nombreProyecto,
+        fecha: project.fecha,
+        descripcion: project.descripcion
+      }
+    })
 
     dialogRef.afterClosed().subscribe((resp) => {
       if(resp) {

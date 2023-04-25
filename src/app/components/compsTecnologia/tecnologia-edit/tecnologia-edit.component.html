@@ -1,0 +1,47 @@
+<div class="dialog-container">
+    <h2 class="title">Editar tecnología</h2>
+    <form [formGroup]="form" class="form" (submit)="onSubmit($event)">
+        <!-- NOMBRE TECNOLOGIA -->
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Ingrese el nombre de la tecnología</mat-label>
+            <input 
+                matInput 
+                placeholder="Ej: HTML" 
+                type="text"
+                formControlName="nombreTecnologia"
+            >
+        </mat-form-field>
+
+        <!-- PORCENTAJE -->
+        <div class="form-field form-field__slider">
+            <mat-label>Ingrese el porcentaje aproximado de lo que sabe:</mat-label>
+            <mat-slider
+                [min]="0"
+                [max]="100"
+                [discrete]="true"
+                class="slider"
+            >
+                <input 
+                    matInput 
+                    placeholder="Porcentaje"
+                    matSliderThumb
+                    formControlName="porcentaje"
+                >
+            </mat-slider>
+        </div>
+
+        <div class="container-buttons">
+            <button
+                mat-raised-button
+                color="accent"
+                type="submit"
+            >Guardar</button>
+            <button
+                mat-raised-button
+                (click)="onNoClick()"
+                type="button"
+            >Salir</button>
+        </div>
+    </form>
+</div>
+

@@ -29,5 +29,8 @@
                 class="card-form__button" 
             >LOGIN</button>
         </form>
+        <div class="loading">
+            <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+        </div>
     </mat-card>
 </div>

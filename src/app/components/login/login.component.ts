@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loading = false;
   form: FormGroup;
 
   constructor(
@@ -26,12 +27,17 @@ export class LoginComponent {
 
   onSubmit(event: Event){
     event.preventDefault();
+
+    this.loading = true
+
     if(this.form.valid){
       this.authService.iniciarSesion(this.form.value).subscribe(data => {
         this.tokenService.setToken(data.token);
+        this.loading = false
         this.router.navigate(['']).then(() => location.reload());
       }, err => {
         console.log(err);
+        this.loading = false;
         alert("Usuario o contraseña incorrectos.");
       })
     }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
@@ -17,8 +17,8 @@ export class ExperienciaAddComponent {
     private dialogRef: MatDialogRef<ExperienciaAddComponent>
   ){
     this.form = formBuilder.group({
-      nombre_empresa: [''],
-      puesto: [''],
+      nombre_empresa: ['', Validators.required],
+      puesto: ['', Validators.required],
       descripcion: [''],
       fecha_inicio: [''],
       fecha_fin: [''],

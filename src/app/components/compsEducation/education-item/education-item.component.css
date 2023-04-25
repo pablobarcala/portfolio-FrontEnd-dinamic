@@ -36,7 +36,15 @@
 }
 
 .container_fecha {
-    padding: 2% 0;
+    padding: 1% 0;
+}
+
+.container_fecha > span {
+    font-size: 0.8rem;
+}
+
+.container_fecha__mobile {
+    display: none;
 }
 
 .en_progreso {
@@ -88,12 +96,19 @@
         font-weight: 400;
     }
 
-    .container_fecha > span {
-        display: flex;
-        align-items: center;
-    }
-
     .en_progreso__mobile {
         width: 35%;
+    }
+
+    .container_fecha__mobile {
+        display: block;
+    }
+
+    .container_fecha__mobile > span {
+        font-size: 1rem;
+    }
+
+    .container_fecha__desktop {
+        display: none;
     }
 }

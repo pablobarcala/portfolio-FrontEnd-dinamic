@@ -38,6 +38,10 @@
     width: 40%;
 }
 
+.loading {
+    width: 100%;
+}
+
 /* -------------------------- MEDIA ----------------------- */
 @media (max-width: 768px) {
     .card-login {

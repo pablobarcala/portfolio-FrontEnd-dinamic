@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EducationService } from 'src/app/services/education.service';
 
@@ -19,8 +19,8 @@ export class EducationEditComponent {
   ){
     this.form = formBuilder.group({
       id: [data.id],
-      nombreInstituto: [data.nombreInstituto],
-      titulo: [data.titulo],
+      nombreInstituto: [data.nombreInstituto, Validators.required],
+      titulo: [data.titulo, Validators.required],
       descripcion: [data.descripcion],
       en_progreso: [data.en_progreso],
       fecha_inicio: [data.fecha_inicio],
@@ -33,11 +33,11 @@ export class EducationEditComponent {
 
     if(!this.form.valid) {
       this.form.markAllAsTouched();
+    } else {
+      this.educacionService.editEducation(this.form.value).subscribe(() => {
+        this.dialogRef.close(this.form.value);
+      });
     }
-
-    this.educacionService.editEducation(this.form.value).subscribe(() => {
-      this.dialogRef.close(this.form.value);
-    });
   }
 
   onNoClick(){

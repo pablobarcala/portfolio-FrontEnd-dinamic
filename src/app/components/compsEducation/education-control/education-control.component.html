@@ -10,10 +10,14 @@
         <mat-card *ngFor="let education of educations" class="card-item">
             <mat-card-header class="card-header">
                 <mat-card-title>{{education.nombreInstituto}}</mat-card-title>
+                <mat-card-subtitle>{{education.titulo}}</mat-card-subtitle>
             </mat-card-header>
             <div class="card-container">
                 <div class="card-description">
+                    <span *ngIf="education.fecha_inicio != null">Fecha: {{education.fecha_inicio | date:"dd/MM/yyyy"}}</span>
+                    <span *ngIf="education.fecha_fin != null"> - {{education.fecha_fin | date:"dd/MM/yyyy"}}</span>
                     <p>{{education.descripcion}}</p>
+                    <p *ngIf="education.en_progreso">En progreso</p>
                 </div>
                 <div class="card-buttons">
                     <i class="fa-regular fa-edit button" (click)="onEdit(education)"></i>

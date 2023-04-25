@@ -31,4 +31,9 @@ export class ProjectService {
     const url = `${this.apiUrl}/create/1`;
     return this.http.post<Proyecto>(url, proyecto);
   }
+
+  editProject(proyecto: Proyecto): Observable<Proyecto>{
+    const url = `${this.apiUrl}/edit/1/${proyecto.id}`
+    return this.http.put<Proyecto>(url, proyecto);
+  }
 }

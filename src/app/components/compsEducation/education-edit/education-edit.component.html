@@ -1,12 +1,12 @@
 <div class="dialog-container">
-    <h2 class="title">Editar educacion</h2>
+    <h2 class="title">Editar educación</h2>
     <form [formGroup]="form" class="form" (submit)="onSubmit($event)">
         <!-- INSTITUTO -->
         <mat-form-field appearance="outline" class="form-field">
             <mat-label>Ingrese el nombre del instituto</mat-label>
             <input 
                 matInput 
-                placeholder="Nombre del instituto" 
+                placeholder="Ej: UNT" 
                 type="text"
                 formControlName="nombreInstituto"
             >
@@ -17,7 +17,7 @@
             <mat-label>Ingrese el título</mat-label>
             <input 
                 matInput 
-                placeholder="Título" 
+                placeholder="Ej: Contador" 
                 type="text"
                 formControlName="titulo"
             >
@@ -76,7 +76,7 @@
                 mat-raised-button
                 color="accent"
                 type="submit"
-            >Enviar</button>
+            >Guardar</button>
             <button
                 mat-raised-button
                 (click)="onNoClick()"

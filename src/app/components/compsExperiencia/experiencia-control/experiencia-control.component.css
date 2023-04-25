@@ -46,11 +46,13 @@
 
 .card-description {
     padding: 0.5rem;
+    width: 75%;
 }
 
-.card-description > p {
+.card-description > p, span {
     font-size: 0.8rem;
     font-weight: 300;
+    padding: 2% 0;
 }
 
 /* ------ BOTONES ------ */
@@ -94,12 +96,12 @@
     .container-header > h2 {
         font-size: 1.35rem;
     }
+    
+    .card-buttons {
+        width: 4rem;
+    }
 
     .button {
         font-size: 1.3rem;
-    }
-
-    .card-buttons {
-        width: 4rem;
     }
 }

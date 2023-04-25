@@ -9,11 +9,15 @@
         </div>
         <mat-card *ngFor="let experiencia of experiencias" class="card-item">
             <mat-card-header class="card-header">
-                <mat-card-title>{{experiencia.puesto}}</mat-card-title>
+                <mat-card-title>{{experiencia.nombre_empresa}}</mat-card-title>
+                <mat-card-subtitle>{{experiencia.puesto}}</mat-card-subtitle>
             </mat-card-header>
             <div class="card-container">
                 <div class="card-description">
+                    <span *ngIf="experiencia.fecha_inicio != null">Fecha: {{experiencia.fecha_inicio | date:"dd/MM/yyyy"}}</span>
+                    <span *ngIf="experiencia.fecha_fin != null"> - {{experiencia.fecha_fin | date:"dd/MM/yyyy"}}</span>
                     <p>{{experiencia.descripcion}}</p>
+                    <p *ngIf="experiencia.trabajo_actual">Trabajo actual</p>
                 </div>
                 <div class="card-buttons">
                     <i class="fa-regular fa-edit button" (click)="onEdit(experiencia)"></i>

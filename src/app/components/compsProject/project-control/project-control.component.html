@@ -13,10 +13,11 @@
             </mat-card-header>
             <div class="card-container">
                 <div class="card-description">
+                    <span *ngIf="project.fecha != null">Fecha: {{project.fecha | date:"dd/MM/yyyy"}}</span>
                     <p>{{project.descripcion}}</p>
                 </div>
                 <div class="card-buttons">
-                    <i class="fa-regular fa-edit button"></i>
+                    <i class="fa-regular fa-edit button" (click)="onEdit(project)"></i>
                     <i class="fa-solid fa-times button" (click)="onDelete(project)"></i>
                 </div>
             </div>

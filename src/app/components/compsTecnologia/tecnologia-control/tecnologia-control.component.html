@@ -1,1 +1,25 @@
-<p>tecnologia-control works!</p>
+<div>
+    <mat-card class="container-list">
+        <div class="container-header">
+            <h2>Lista de elementos</h2>
+            <div class="container-header-buttons">
+                <button mat-flat-button color="primary" (click)="onAdd()">Agregar</button>
+                <button mat-flat-button color="warn" routerLink="">Volver</button>
+            </div>
+        </div>
+        <mat-card *ngFor="let tecnologia of tecnologias" class="card-item">
+            <mat-card-header class="card-header">
+                <mat-card-title>{{tecnologia.nombreTecnologia}}</mat-card-title>
+            </mat-card-header>
+            <div class="card-container">
+                <div class="card-description">
+                    <p>Conocimiento aproximado: {{tecnologia.porcentaje}}%</p>
+                </div>
+                <div class="card-buttons">
+                    <i class="fa-regular fa-edit button" (click)="onEdit(tecnologia)"></i>
+                    <i class="fa-solid fa-times button" (click)="onDelete(tecnologia)"></i>
+                </div>
+            </div>
+        </mat-card>
+    </mat-card>
+</div>

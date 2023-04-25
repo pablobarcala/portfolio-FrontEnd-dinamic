@@ -35,6 +35,18 @@
     font-weight: lighter;
 }
 
+.container_fecha {
+    padding: 1% 0;
+}
+
+.container_fecha > span {
+    font-size: 0.8rem;
+}
+
+.container_fecha__mobile {
+    display: none;
+}
+
 .actual {
     margin: 0.5rem 0;
     background-color: rgb(191, 216, 240);
@@ -43,9 +55,6 @@
     width: 20%;
 }
 
-.container_fecha {
-    padding: 2% 0;
-}
 
 /* ------------------------ MEDIA QUERIES ---------------------- */
 @media (max-width: 992px) {
@@ -74,13 +83,20 @@
         font-weight: 400;
     }
 
-    .container_fecha > span {
-        display: flex;
-        align-items: center;
-    }
-
     .actual {
         width: 35%;
+    }
+
+    .container_fecha__mobile {
+        display: block;
+    }
+
+    .container_fecha__mobile > span {
+        font-size: 1rem;
+    }
+
+    .container_fecha__desktop {
+        display: none;
     }
 }
 

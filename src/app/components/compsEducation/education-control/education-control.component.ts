@@ -54,7 +54,7 @@ export class EducationControlComponent implements OnInit {
   onDelete(education: Educacion) {
     const dialogRef = this.dialog.open(DeleteConfComponent, {
       data: {
-        title: 'Education',
+        title: 'Educacion',
         name: education.titulo,
         description: education.descripcion
       }

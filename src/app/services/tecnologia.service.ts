@@ -30,4 +30,9 @@ export class TecnologiaService {
     const url = `${this.apiUrl}/create/1`
     return this.http.post<Tecnologia>(url, tecnologia);
   }
+
+  editTecnologia(tecnologia: Tecnologia): Observable<Tecnologia>{
+    const url = `${this.apiUrl}/edit/1/${tecnologia.id}`
+    return this.http.put<Tecnologia>(url, tecnologia)
+  }
 }

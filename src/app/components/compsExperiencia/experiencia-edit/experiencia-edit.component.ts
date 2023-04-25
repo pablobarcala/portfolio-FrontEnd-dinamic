@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
@@ -19,8 +19,8 @@ export class ExperienciaEditComponent {
   ) {
     this.form = formBuilder.group({
       id: [data.id],
-      nombre_empresa: [data.nombre_empresa],
-      puesto: [data.puesto],
+      nombre_empresa: [data.nombre_empresa, Validators.required],
+      puesto: [data.puesto, Validators.required],
       imagen: [data.imagen],
       descripcion: [data.descripcion],
       fecha_inicio: [data.fecha_inicio],

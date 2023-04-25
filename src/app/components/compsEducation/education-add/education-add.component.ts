@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { MatDialogRef } from '@angular/material/dialog';
 import { EducationService } from 'src/app/services/education.service';
@@ -18,8 +18,8 @@ export class EducationAddComponent {
     public dialogRef: MatDialogRef<EducationAddComponent>  
   ){
     this.form = formBuilder.group({
-      nombreInstituto: [''],
-      titulo: [''],
+      nombreInstituto: ['', Validators.required],
+      titulo: ['', Validators.required],
       descripcion: [''],
       en_progreso: [false],
       fecha_inicio: [''],
@@ -32,11 +32,12 @@ export class EducationAddComponent {
 
     if(!this.form.valid) {
       this.form.markAllAsTouched();
+    } else {
+      this.educacionService.saveEducation(this.form.value).subscribe(() => {
+        this.dialogRef.close(this.form.value);
+      });
     }
 
-    this.educacionService.saveEducation(this.form.value).subscribe(() => {
-      this.dialogRef.close(this.form.value);
-    });
   }
 
   onNoClick(){

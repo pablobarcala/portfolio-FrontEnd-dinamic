@@ -20,24 +20,22 @@
     width: 100%;
 }
 
+.form-field__slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    margin: 2rem 0;
+    width: 50%;
+}
+
 .container-buttons {
     display: flex;
     justify-content: space-between;
     margin: auto;
     width: 30%;
-    padding-top: 1rem;
-}
-
-/* -------------------- FECHAS ------------------ */
-
-.fecha {
-    padding: 0;
-    width: 50%;
-    margin: auto;
-}
-
-.fecha-input {
-    width: 100%;
 }
 
 /* --------------------- MEDIA QUERIES -------------------- */
@@ -45,10 +43,6 @@
     .dialog-container {
         width: 35rem;
         max-height: 50rem;
-    }
-
-    .fecha {
-        width: 100%;
     }
 }
 
@@ -61,6 +55,10 @@
     .container-buttons {
         width: 40%;
     }
+
+    .slider {
+        width: 70%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -71,5 +69,9 @@
 
     .container-buttons {
         width: 60%;
+    }
+
+    .slider {
+        width: 80%;
     }
 }
