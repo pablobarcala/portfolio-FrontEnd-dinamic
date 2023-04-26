@@ -13,6 +13,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatMenuModule,
+    MatIconModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -46,7 +50,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatMenuModule,
+    MatIconModule
   ]
 })
 export class MaterialModule { }

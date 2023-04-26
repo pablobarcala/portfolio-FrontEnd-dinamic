@@ -1,5 +1,22 @@
 <div class="header row">
     <div class="title col-10 col-sm-7 col-md-8 col-lg-9">
+        <button class="menu_button" mat-icon-button [mat-menu-trigger-for]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button type="button" mat-menu-item (click)="scrollTo('educacion')">
+                <span>Educacion</span>
+            </button>
+            <button type="button" mat-menu-item (click)="scrollTo('experiencia')">
+                <span>Experiencia</span>
+            </button>
+            <button mat-menu-item (click)="scrollTo('skills')">
+                <span>Hard skills</span>
+            </button>
+            <button mat-menu-item (click)="scrollTo('proyectos')">
+                <span>Proyectos</span>
+            </button>
+        </mat-menu>
         <h2 routerLink="">Portfolio</h2>
     </div>
     <div class="contenedor-menu col-2 col-sm-5 col-md-4 col-lg-3">

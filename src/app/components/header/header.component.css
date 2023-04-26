@@ -17,6 +17,10 @@
     padding: 0;
 }
 
+.menu_button {
+    margin-right: 1rem;
+}
+
 h2 { 
     display: inline-block;
     cursor: pointer;

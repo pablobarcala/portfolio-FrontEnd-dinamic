@@ -27,7 +27,6 @@ import { ProjectItemComponent } from './components/compsProject/project-item/pro
 import { ProjectControlComponent } from './components/compsProject/project-control/project-control.component';
 import { InterceptorService } from './services/interceptor.service';
 import { EducationAddComponent } from './components/compsEducation/education-add/education-add.component';
-import { EducationService } from './services/education.service';
 import { AboutAddComponent } from './components/about-add/about-add.component';
 import { ExperienciaAddComponent } from './components/compsExperiencia/experiencia-add/experiencia-add.component';
 import { ExperienciaEditComponent } from './components/compsExperiencia/experiencia-edit/experiencia-edit.component';
