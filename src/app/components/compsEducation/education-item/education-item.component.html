@@ -12,12 +12,12 @@
             </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
+            <mat-card-subtitle class="en_progreso en_progreso__desktop" *ngIf="educacion.en_progreso">Actualmente en progreso</mat-card-subtitle>
+            <mat-card-subtitle class="en_progreso en_progreso__mobile" *ngIf="educacion.en_progreso">En progreso</mat-card-subtitle>
             <div class="container_fecha container_fecha__mobile" *ngIf="educacion.fecha_inicio != null">
                 <span>{{educacion.fecha_inicio | date:'dd/MM/yyyy'}}</span>
                 <span *ngIf="educacion.fecha_fin != null"> - {{educacion.fecha_fin | date: 'dd/MM/yyyy'}}</span>
             </div>
-            <mat-card-subtitle class="en_progreso en_progreso__desktop" *ngIf="educacion.en_progreso">Actualmente en progreso</mat-card-subtitle>
-            <mat-card-subtitle class="en_progreso en_progreso__mobile" *ngIf="educacion.en_progreso">En progreso</mat-card-subtitle>
             <h3 class="card__content__title">Descripción:</h3>
             <p class="card__content__description">{{educacion.descripcion}}</p>
         </mat-card-content>

@@ -34,3 +34,9 @@ a {
 .icon__linkedin:hover {
     color: #0077b5;
 }
+
+@media (max-width: 576px) {
+    .footer {
+        margin-top: 2rem;
+    }
+}

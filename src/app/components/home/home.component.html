@@ -4,4 +4,17 @@
     <app-experiencias id="experiencia"></app-experiencias>
     <app-tecnologias id="skills"></app-tecnologias>
     <app-projects id="proyectos"></app-projects>
+    <button
+        mat-button
+        class="up_button" 
+        id="up_button" 
+        *ngIf="showButton"
+        (click)="scrollUp()"
+    >
+        <mat-icon
+            class="icon"
+        >
+            keyboard_arrow_up
+        </mat-icon>
+    </button>
 </div>

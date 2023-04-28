@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { ScrollService } from 'src/app/services/scroll.service';
 })
 export class HomeComponent implements OnInit {
   section: string = '';
+  showButton: boolean = false;
 
   constructor(private scrollService: ScrollService){}
 
@@ -23,5 +24,16 @@ export class HomeComponent implements OnInit {
         }
       } 
     })
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    const posicion = 400;
+    const scrollActual = window.pageYOffset || document.documentElement.scrollTop
+    this.showButton = scrollActual > posicion && window.innerWidth < 576
+  }
+
+  scrollUp() {
+    window.scrollTo({top: 0, behavior: 'smooth'})
   }
 }

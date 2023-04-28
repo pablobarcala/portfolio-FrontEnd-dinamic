@@ -34,8 +34,16 @@
     }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 576px) {
+    .component-header {
+        margin-top: 2rem;
+    }
+    
     .container-title {
         width: 40%;
+    }
+
+    .container-tec {
+        padding: 0;
     }
 }

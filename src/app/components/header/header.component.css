@@ -67,7 +67,15 @@ button {
 /* ------------------------ MEDIA QUERIES ------------------------ */
 
 @media (max-width: 575px) {
+    .header {
+        padding-left: 1rem;
+    }
+    
     .contenedor-iconos {
         display: none;
+    }
+
+    .menu_button {
+        margin-right: 0.2rem;
     }
 } 
