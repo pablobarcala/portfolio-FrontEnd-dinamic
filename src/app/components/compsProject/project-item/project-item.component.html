@@ -1,7 +1,17 @@
 <div>
     <mat-card class="card">
         <mat-card-header class="card__header">
-            <div mat-card-avatar class="avatar"></div>
+            <div 
+                mat-card-avatar 
+                class="avatar" 
+                id="proy-image" 
+                *ngIf="proyecto.imagen"
+            ></div>
+            <div 
+                mat-card-avatar 
+                class="avatar__predet"
+                *ngIf="!proyecto.imagen"
+            ></div>
             <mat-card-title-group>
                 <mat-card-title class="card__title">{{proyecto.nombreProyecto}}</mat-card-title>
                 <div class="container_fecha container_fecha__desktop" *ngIf="proyecto.fecha != null">

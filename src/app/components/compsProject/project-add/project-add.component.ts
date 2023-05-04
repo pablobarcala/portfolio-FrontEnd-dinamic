@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage, ref, uploadBytes } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ProjectService } from 'src/app/services/project.service';
@@ -14,13 +15,25 @@ export class ProjectAddComponent {
   constructor(
     private projectService: ProjectService,
     private dialogRef: MatDialogRef<ProjectAddComponent>,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private storage: Storage
   ) {
     this.form = formBuilder.group({
       nombreProyecto: ['', Validators.required],
       descripcion: [''],
-      fecha: ['']
+      fecha: [''],
+      imagen: []
     })
+  }
+
+  onChangeImage($event: any){
+    const file = $event.target.files[0]
+    const imgRef = ref(this.storage, `${file.name}`)
+  
+    uploadBytes(imgRef, file)
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+    this.form.value.imagen = file.name
   }
 
   onSubmit(event: Event) {

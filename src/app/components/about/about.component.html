@@ -1,7 +1,8 @@
 <div *ngFor="let persona of personas" class="container-about">
     <mat-card class="card-about">
         <mat-card-header class="card-header">
-            <img [src]="'assets/images/profile.jpeg'" class="card-profile" alt="Imagen perfil">
+            <!-- <img [src]="'assets/images/profile.jpeg'" class="card-profile" alt="Imagen perfil"> -->
+            <img id="myimg" class="card-profile" alt="Imagen de perfil"/>
             <mat-card-title class="card-title">{{persona.nombre}} {{persona.apellido}}</mat-card-title>
             <mat-card-subtitle class="card-subtitle">{{persona.titulo}}</mat-card-subtitle>
         </mat-card-header>

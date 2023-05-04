@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "portfolio-dc280"
+  },
+  "targets": {
+    "portfolio-dc280": {
+      "hosting": {
+        "portfolio-FrontEnd-dinamic": [
+          "portfolio-dc280"
+        ]
+      }
+    }
   }
 }

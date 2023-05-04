@@ -5,6 +5,7 @@ import { EducationService } from 'src/app/services/education.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
 import { EducationAddComponent } from '../education-add/education-add.component';
 import { EducationEditComponent } from '../education-edit/education-edit.component';
+import { Storage, getDownloadURL, ref } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-education-control',
@@ -13,11 +14,34 @@ import { EducationEditComponent } from '../education-edit/education-edit.compone
 })
 export class EducationControlComponent implements OnInit {
   educations: Educacion[] = []
+  imageUrls: any = {};
 
-  constructor(private educationService: EducationService, private dialog: MatDialog){}
+  constructor(
+    private educationService: EducationService, 
+    private dialog: MatDialog,
+    private storage: Storage  
+  ){}
 
   ngOnInit(): void {
     this.educationService.getEducation().subscribe(data => this.educations = data);
+    setTimeout(() => {
+      this.educations.forEach(educacion => {
+        if(educacion.imagen) {
+          const index = this.educations.findIndex(edu => edu.id === educacion.id)
+          this.getImagen(educacion.imagen, index);
+        }
+      })
+    }, 1500)
+  }
+
+  getImagen(imagen: any, index: number){
+    getDownloadURL(ref(this.storage, imagen))
+    .then((url) => {
+      this.imageUrls[index] = url;
+    })
+    .catch((error) => {
+      console.log(error)
+    })
   }
   
   onAdd() {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage, ref, uploadBytes } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -15,16 +16,28 @@ export class EducationAddComponent {
   constructor(
     private formBuilder: FormBuilder, 
     private educacionService: EducationService,
-    public dialogRef: MatDialogRef<EducationAddComponent>  
+    public dialogRef: MatDialogRef<EducationAddComponent>,
+    private storage: Storage
   ){
     this.form = formBuilder.group({
       nombreInstituto: ['', Validators.required],
       titulo: ['', Validators.required],
+      imagen: [],
       descripcion: [''],
       en_progreso: [false],
       fecha_inicio: [''],
       fecha_fin: ['']
     });
+  }
+
+  onChangeImage($event: any){
+    const file = $event.target.files[0]
+    const imgRef = ref(this.storage, `${file.name}`)
+  
+    uploadBytes(imgRef, file)
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+    this.form.value.imagen = file.name
   }
 
   onSubmit(event: Event) {

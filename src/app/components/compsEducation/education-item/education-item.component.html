@@ -1,7 +1,17 @@
 <div>
     <mat-card class="card">
         <mat-card-header class="card__header">
-            <div mat-card-avatar class="avatar"></div>
+            <div 
+                mat-card-avatar 
+                class="avatar" 
+                id="edu-image" 
+                *ngIf="educacion.imagen"
+            ></div>
+            <div 
+                mat-card-avatar 
+                class="avatar__predet"
+                *ngIf="!educacion.imagen"
+            ></div>
             <mat-card-title-group>
                 <mat-card-title class="card__title">{{educacion.nombreInstituto}}</mat-card-title>
                 <mat-card-subtitle class="card__subtitle">{{educacion.titulo}}</mat-card-subtitle>

@@ -10,10 +10,14 @@
     align-items: center;
 }
 
-.avatar {
-    background-image: url('../../../../assets/images/exp.jpg');
+.avatar,
+.avatar__predet {
     background-size: cover;
     margin: 0 1rem 0 0;
+}
+
+.avatar__predet {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-dc280.appspot.com/o/exp.jpg?alt=media&token=d6e4a1d4-cd2c-4a7a-a8cd-d231d73d3acc);
 }
 
 .card__title {

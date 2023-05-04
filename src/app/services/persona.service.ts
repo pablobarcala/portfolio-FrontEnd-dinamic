@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { Persona } from '../interfaces/Persona';
+import { Storage, ref, getDownloadURL } from '@angular/fire/storage';
 
 const httpOptions = {
   headers: new HttpHeaders ({
@@ -15,10 +16,20 @@ const httpOptions = {
 export class PersonaService {
   apiUrl = 'https://portfolio-service-vgkk.onrender.com/api/persona'
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storage: Storage) {}
 
   getPersona(): Observable<Persona[]>{
     return this.http.get<Persona[]>(this.apiUrl + '/traer');
+  }
+
+  getImagenPersona(imagen: string) {
+    const imageRef = ref(this.storage, imagen)
+    getDownloadURL(imageRef)
+    .then((url) => {
+      return url
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   editPersona(persona: Persona): Observable<Persona>{

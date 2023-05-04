@@ -6,6 +6,16 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { MaterialModule } from './modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// FIREBASE 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EducationsComponent } from './components/compsEducation/educations/educations.component';
@@ -73,6 +83,9 @@ import { LogoutConfComponent } from './components/logout-conf/logout-conf.compon
   ],
   imports: [
     BrowserModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
+    provideAuth(() => getAuth()),
     FontAwesomeModule,
     HttpClientModule,
     AppRoutingModule,
@@ -80,7 +93,7 @@ import { LogoutConfComponent } from './components/logout-conf/logout-conf.compon
     ReactiveFormsModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
   ],
   bootstrap: [AppComponent]
 })

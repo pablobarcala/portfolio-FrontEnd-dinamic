@@ -13,6 +13,9 @@
             </mat-card-header>
             <div class="card-container">
                 <div class="card-description">
+                    <div class="card-imagen" *ngIf="project.imagen">
+                        <img width="30%" alt="Imagen de experiencia" id="proy-image">
+                    </div>
                     <span *ngIf="project.fecha != null">Fecha: {{project.fecha | date:"dd/MM/yyyy"}}</span>
                     <p>{{project.descripcion}}</p>
                 </div>

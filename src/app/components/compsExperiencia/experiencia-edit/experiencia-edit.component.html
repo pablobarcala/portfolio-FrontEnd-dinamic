@@ -68,7 +68,18 @@
             </div>
         </div>
 
-        <!-- EN PROGRESO -->
+        <!-- IMAGEN -->
+        <div class="form-field form-field__imagen">
+            <mat-label>Ingrese una imagen:</mat-label>
+            <input 
+                placeholder="Imagen" 
+                type="file"
+                formControlName="imagen"
+                (change)="onChangeImage($event)"
+            >
+        </div>
+
+        <!-- TRABAJO ACTUAL -->
         <mat-checkbox formControlName="trabajo_actual">Trabajo actual</mat-checkbox>
 
         <div class="container-buttons">

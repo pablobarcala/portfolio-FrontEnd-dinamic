@@ -39,6 +39,17 @@
             </mat-form-field>
         </div>
 
+        <!-- IMAGEN -->
+        <div class="form-field form-field__imagen">
+            <mat-label>Ingrese una imagen:</mat-label>
+            <input 
+                placeholder="Imagen" 
+                type="file"
+                formControlName="imagen"
+                (change)="onChangeImage($event)"
+            >
+        </div>
+
         <div class="container-buttons">
             <button
                 mat-raised-button
