@@ -1,27 +1,16 @@
-# PortfolioFrontEndDinamic
-
+# portfolio-FrontEnd
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
-## Development server
+# Descripción
+Este proyecto es el frontend del portfolio, proporciona una interfaz de usuario para que los visitantes conozcan mi información profesional. Está construida con Angular y se comunica con la API proporcionada por el [back-end](https://github.com/pablobarcala/portfolio-BackEnd) utilizando HTTP requests.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Funcionalidades
+* Visualización de información acerca de mi educación, experiencia, proyectos y hard skills.
+* Acceso a redes sociales como GitHub, Instagram y LinkedIn.
+* Los administradores de la página pueden iniciar sesión para poder editar o eliminar la información del portfolio.
 
-## Code scaffolding
+# Autor
+Este proyecto fue desarrollado por [Pablo Barcala](https://github.com/pablobarcala)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Tiempo de carga
+Es importante tener en cuenta que el back-end al que se conecta el proyecto está alojado en 'render.com', y debido a que la plataforma tiene una política de suspensión de sus máquinas virtuales luego de 15 minutos de inactividad, esto provoca un tiempo de carga adicional de aproximadamente 5 minutos. Gracias por su comprensión.
