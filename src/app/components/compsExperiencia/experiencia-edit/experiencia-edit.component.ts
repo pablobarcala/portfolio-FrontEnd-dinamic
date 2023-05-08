@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-import { Storage, ref, uploadBytes } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
@@ -16,8 +15,7 @@ export class ExperienciaEditComponent {
     private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<ExperienciaEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, 
-    private experienciaService: ExperienciaService,
-    private storage: Storage
+    private experienciaService: ExperienciaService
   ) {
     this.form = formBuilder.group({
       id: [data.id],
@@ -29,16 +27,6 @@ export class ExperienciaEditComponent {
       fecha_fin: [data.fecha_fin],
       trabajo_actual: [data.trabajo_actual]
     })
-  }
-
-  onChangeImage($event: any){
-    const file = $event.target.files[0]
-    const imgRef = ref(this.storage, `${file.name}`)
-  
-    uploadBytes(imgRef, file)
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
-    this.form.value.imagen = file.name
   }
 
   onSubmit(event: any){

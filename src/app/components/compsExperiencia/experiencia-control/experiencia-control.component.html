@@ -14,9 +14,6 @@
             </mat-card-header>
             <div class="card-container">
                 <div class="card-description">
-                    <div class="card-imagen" *ngIf="experiencia.imagen">
-                        <img width="30%" alt="Imagen de experiencia" id="exp-image">
-                    </div>
                     <span *ngIf="experiencia.fecha_inicio != null">Fecha: {{experiencia.fecha_inicio | date:"dd/MM/yyyy"}}</span>
                     <span *ngIf="experiencia.fecha_fin != null"> - {{experiencia.fecha_fin | date:"dd/MM/yyyy"}}</span>
                     <p>{{experiencia.descripcion}}</p>

@@ -10,14 +10,10 @@
     align-items: center;
 }
 
-.avatar,
-.avatar__predet {
+.avatar {
     background-size: cover;
     margin: 0 1rem 0 0;
-}
-
-.avatar__predet {
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-dc280.appspot.com/o/exp.jpg?alt=media&token=d6e4a1d4-cd2c-4a7a-a8cd-d231d73d3acc);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-dc280.appspot.com/o/2.jpg?alt=media&token=dfa1a994-3dba-4142-b4f8-192e835a7e90);
 }
 
 .card__title {

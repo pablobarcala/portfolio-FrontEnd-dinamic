@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Storage, ref, uploadBytes } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
@@ -15,8 +14,7 @@ export class ExperienciaAddComponent {
   constructor(
     private formBuilder: FormBuilder,
     private experienciaService: ExperienciaService,
-    private dialogRef: MatDialogRef<ExperienciaAddComponent>,
-    private storage: Storage
+    private dialogRef: MatDialogRef<ExperienciaAddComponent>
   ){
     this.form = formBuilder.group({
       nombre_empresa: ['', Validators.required],
@@ -27,16 +25,6 @@ export class ExperienciaAddComponent {
       fecha_fin: [''],
       trabajo_actual: [false]
     })
-  }
-
-  onChangeImage($event: any){
-    const file = $event.target.files[0]
-    const imgRef = ref(this.storage, `${file.name}`)
-  
-    uploadBytes(imgRef, file)
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
-    this.form.value.imagen = file.name
   }
 
   onSubmit(event: Event) {

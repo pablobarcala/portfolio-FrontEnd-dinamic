@@ -5,7 +5,6 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { DeleteConfComponent } from '../../delete-conf/delete-conf.component';
 import { ExperienciaAddComponent } from '../experiencia-add/experiencia-add.component';
 import { ExperienciaEditComponent } from '../experiencia-edit/experiencia-edit.component';
-import { Storage, getDownloadURL, ref, uploadBytes } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-experiencia-control',
@@ -17,30 +16,11 @@ export class ExperienciaControlComponent implements OnInit {
   
   constructor(
     private experienciaService: ExperienciaService, 
-    private dialog: MatDialog,
-    private storage: Storage  
+    private dialog: MatDialog
   ){}
   
   ngOnInit(): void {
     this.experienciaService.getExperiencia().subscribe(data => this.experiencias = data);
-    setTimeout(() => {
-      this.experiencias.forEach(experiencia => {
-        if(experiencia.imagen){
-          this.getImagen(experiencia.imagen);
-        }
-      })
-    }, 1500);
-  }
-
-  getImagen(imagen: any){
-    getDownloadURL(ref(this.storage, imagen))
-    .then((url) => {
-      const img = document.getElementById('exp-image')
-      img?.setAttribute('src', url)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
   }
 
   onAdd() {
